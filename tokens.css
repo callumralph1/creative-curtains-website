@@ -1,0 +1,78 @@
+/* Creative Curtains & Blinds — Design Tokens */
+:root {
+    --sage-400:  #A2B7A4;
+    --sage-900:  #1A1D1A;
+    --sage-700:  #444C45;
+    --sage-600:  #6A766B;
+    --sage-200:  #D6E0D7;
+    --sage-100:  #EDF2EE;
+    --paper:     #FAF8F3;
+    --white:     #FFFFFF;
+
+    --colour-brand:    var(--sage-400);
+    --colour-ink:      var(--sage-900);
+    --colour-text:     var(--sage-700);
+    --colour-quiet:    var(--sage-600);
+    --colour-divider:  var(--sage-200);
+    --colour-bg:       var(--paper);
+    --colour-surface:  var(--white);
+    --colour-nav-bg:   var(--sage-900);
+
+    --font-serif: 'EB Garamond', Georgia, serif;
+    --font-sans:  'Inter', system-ui, sans-serif;
+    --font-mono:  'JetBrains Mono', monospace;
+
+    --text-xs:   0.75rem;
+    --text-sm:   0.875rem;
+    --text-base: 1rem;
+    --text-md:   1.125rem;
+    --text-lg:   1.25rem;
+    --text-xl:   1.5rem;
+    --text-2xl:  2rem;
+    --text-3xl:  2.5rem;
+    --text-4xl:  3.25rem;
+    --text-5xl:  4rem;
+    --text-6xl:  5rem;
+
+    --leading-tight:  1.15;
+    --leading-snug:   1.3;
+    --leading-normal: 1.6;
+
+    --tracking-tight:   -0.03em;
+    --tracking-wide:     0.08em;
+    --tracking-widest:   0.15em;
+
+    --space-1:  0.25rem;
+    --space-2:  0.5rem;
+    --space-3:  0.75rem;
+    --space-4:  1rem;
+    --space-5:  1.25rem;
+    --space-6:  1.5rem;
+    --space-8:  2rem;
+    --space-10: 2.5rem;
+    --space-12: 3rem;
+    --space-16: 4rem;
+    --space-20: 5rem;
+    --space-24: 6rem;
+    --space-32: 8rem;
+    --space-40: 10rem;
+
+    --container:    1240px;
+    --container-sm: 760px;
+    --gutter:       clamp(1.25rem, 4vw, 2.5rem);
+    --radius-sm:    2px;
+    --radius:       4px;
+    --radius-lg:    8px;
+
+    --shadow-sm: 0 1px 3px rgba(26,29,26,.08);
+    --shadow:    0 4px 16px rgba(26,29,26,.10);
+    --shadow-lg: 0 12px 40px rgba(26,29,26,.14);
+
+    --ease-out:      cubic-bezier(.22,1,.36,1);
+    --duration-fast: 150ms;
+    --duration-base: 250ms;
+    --duration-slow: 400ms;
+
+    --z-nav:   100;
+    --z-modal: 300;
+}
