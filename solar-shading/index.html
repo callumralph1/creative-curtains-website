@@ -1,270 +1,420 @@
 <!DOCTYPE html>
-<html lang="en-GB">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>External Solar Shading — Part O Compliant | Creative Curtains &amp; Blinds</title>
-  <meta name="description" content="External roller screens, louvres, awnings and MicroLouvre® panels. The only products that satisfy Part O overheating regulations. Sussex, Kent, Surrey and London.">
-  <link rel="canonical" href="https://www.creativecurtains.uk.com/solar-shading/">
-  <link rel="stylesheet" href="/tokens.css">
-  <link rel="stylesheet" href="/global.css">
-  <style>
-    .product-hero{min-height:80vh;display:grid;position:relative;background:var(--sage-900);overflow:hidden}
-    .product-hero-media{position:absolute;inset:0}
-    .product-hero-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(26,29,26,.92) 45%,rgba(26,29,26,.25) 100%),linear-gradient(to top,rgba(26,29,26,.6) 0%,transparent 50%)}
-    .product-hero-content{position:relative;z-index:1;display:flex;flex-direction:column;justify-content:flex-end;padding-top:calc(72px + 5rem);padding-bottom:clamp(4rem,8vw,7rem)}
-    .product-hero h1{color:var(--white);margin-top:var(--sp-4);margin-bottom:var(--sp-5)}
-    .product-hero .lead{color:rgba(255,255,255,.65);max-width:52ch}
-
-    .reg-box{background:rgba(162,183,164,.08);border:1px solid rgba(162,183,164,.2);border-radius:var(--radius-md);padding:var(--sp-6);margin-top:var(--sp-10)}
-    .reg-box-header{display:flex;align-items:center;gap:var(--sp-3);margin-bottom:var(--sp-4)}
-    .reg-box-icon{font-size:20px}
-    .reg-box-title{font-family:var(--font-sans);font-size:var(--text-xs);font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--sage-400)}
-    .reg-items{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp-4)}
-    .reg-item{text-align:center}
-    .reg-item-num{font-family:var(--font-serif);font-size:var(--text-3xl);font-weight:500;color:var(--sage-400);line-height:1;display:block;margin-bottom:var(--sp-1)}
-    .reg-item-label{font-size:var(--text-xs);font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.45)}
-
-    .product-range{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp-6)}
-    .range-card{background:var(--white);border:1px solid var(--color-border);border-radius:var(--radius-md);overflow:hidden;transition:transform var(--dur-slow) var(--ease-out-expo),box-shadow var(--dur-slow) var(--ease-out-expo)}
-    .range-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
-    .range-card-media{aspect-ratio:4/3}
-    .range-card-body{padding:var(--sp-6)}
-    .range-card-body h3{font-size:var(--text-xl);margin-bottom:var(--sp-2)}
-    .range-card-body p{font-size:var(--text-sm);color:var(--sage-700);margin-bottom:var(--sp-4)}
-    .range-card-spec{font-family:var(--font-mono);font-size:var(--text-xs);color:var(--sage-600);letter-spacing:.06em}
-
-    .compliance-table{width:100%;border-collapse:collapse;margin-top:var(--sp-8)}
-    .compliance-table th{background:var(--sage-900);color:var(--white);text-align:left;padding:var(--sp-3) var(--sp-5);font-size:var(--text-xs);font-weight:600;letter-spacing:.08em;text-transform:uppercase}
-    .compliance-table td{padding:var(--sp-4) var(--sp-5);border-bottom:1px solid var(--color-border);font-size:var(--text-sm)}
-    .compliance-table tr:nth-child(even) td{background:var(--sage-50)}
-    .check{color:#22c55e;font-weight:700}
-    .cross{color:#ef4444;font-weight:700}
-
-    .microlouvre-cta{background:var(--sage-900);border-radius:var(--radius-lg);padding:var(--sp-10);display:grid;grid-template-columns:1fr auto;gap:var(--sp-8);align-items:center}
-
-    @media(max-width:1024px){.product-range{grid-template-columns:repeat(2,1fr)}}
-    @media(max-width:768px){.product-range{grid-template-columns:1fr}.reg-items{grid-template-columns:1fr}.microlouvre-cta{grid-template-columns:1fr}}
-  </style>
+  <meta name="description" content="Part O compliant external solar shading solutions for residential and commercial properties across Sussex, Surrey, Kent and London. TM59 assessed, BREEAM credited.">
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/css/global.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-  <nav class="site-nav is-transparent" id="site-nav"><div class="nav-inner"><a href="/" class="nav-logo"><span class="nav-logo-text">Creative Curtains<br>&amp; Blinds</span></a><ul class="nav-links"><li class="nav-dropdown"><button class="nav-link">Products <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4l4 4 4-4"/></svg></button><div class="nav-dropdown-menu"><a class="nav-dropdown-item" href="/curtains/"><span class="nav-dropdown-icon">🪟</span>Curtains</a><a class="nav-dropdown-item" href="/blinds/"><span class="nav-dropdown-icon">🏮</span>Blinds</a><a class="nav-dropdown-item" href="/shutters/"><span class="nav-dropdown-icon">🔲</span>Shutters</a><a class="nav-dropdown-item" href="/solar-shading/"><span class="nav-dropdown-icon">☀️</span>Solar Shading</a></div></li><li><a href="/projects/" class="nav-link">Projects</a></li><li><a href="/knowledge/" class="nav-link">Knowledge</a></li><li><a href="/trade/" class="nav-link">Trade</a></li><li><a href="/about/" class="nav-link">About</a></li></ul><a href="tel:01323844555" class="nav-phone">01323 844555</a><a href="/contact/" class="nav-cta">Book Consultation</a><button class="nav-toggle" id="nav-toggle" aria-label="Open menu"><span></span><span></span><span></span></button></div></nav><div class="nav-mobile" id="nav-mobile"><a href="/curtains/" class="nav-mobile-link">Curtains</a><a href="/blinds/" class="nav-mobile-link">Blinds</a><a href="/shutters/" class="nav-mobile-link">Shutters</a><a href="/solar-shading/" class="nav-mobile-link">Solar Shading</a><a href="/projects/" class="nav-mobile-link">Projects</a><a href="/contact/" class="nav-mobile-link">Book a Consultation</a></div>
-  <main id="main">
 
-    <section class="product-hero">
-      <div class="product-hero-media">
-        <div class="img-placeholder" style="min-height:100%;border-radius:0;background:var(--sage-800)">
-          <span class="img-placeholder-icon">☀️</span>
-          <span>Solar shading hero — dramatic external installation photo. Louvres, roller screens or pergola on a modern building.</span>
-        </div>
-        <div class="product-hero-overlay"></div>
+<!-- NAV -->
+<nav class="site-nav" id="siteNav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">Creative Curtains &amp; Blinds</a>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/curtains/">Curtains</a></li>
+      <li><a href="/blinds/">Blinds</a></li>
+      <li><a href="/shutters/">Shutters</a></li>
+      <li><a href="/solar-shading/" class="active">Solar Shading</a></li>
+      <li><a href="/sectors/">Sectors</a></li>
+      <li><a href="/projects/">Projects</a></li>
+      <li><a href="/showroom/">Showroom</a></li>
+      <li><a href="/contact/" class="nav-cta">Get a Quote</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="img-placeholder" style="position:absolute;inset:0;z-index:0;" data-label="Hero: External solar shading on glazed facade — warm afternoon light"></div>
+  <div class="page-hero-content">
+    <p class="eyebrow">Solar &amp; Regulatory Compliance</p>
+    <h1>External Solar Shading</h1>
+    <p class="lead">Engineered solutions that keep buildings cool, meet Part O of the Building Regulations, and earn BREEAM credits — without compromising the view.</p>
+  </div>
+</section>
+
+<!-- REGULATORY CALLOUT -->
+<section class="section-pad bg-ink text-paper">
+  <div class="container">
+    <div class="grid-2 gap-lg align-center">
+      <div data-reveal>
+        <p class="eyebrow" style="color:var(--sage-400);">Part O · Building Regulations 2021</p>
+        <h2 style="color:var(--paper);">The law changed.<br>Your glazing needs to keep up.</h2>
+        <p style="color:var(--sage-400);margin-top:var(--space-4);">Since June 2022, Part O requires all new dwellings to demonstrate they will not overheat. External solar shading is the most reliable compliance route — internal blinds, glass specifications, and ventilation alone rarely achieve the required results.</p>
+        <ul style="margin-top:var(--space-5);list-style:none;padding:0;display:flex;flex-direction:column;gap:var(--space-3);">
+          <li style="display:flex;gap:var(--space-3);align-items:flex-start;"><span style="color:var(--sage-400);font-family:var(--font-mono);font-size:0.75rem;padding-top:2px;">01</span><span style="color:var(--sage-300);">External shading provides the highest solar factor reduction — typically 60–85% depending on system and orientation</span></li>
+          <li style="display:flex;gap:var(--space-3);align-items:flex-start;"><span style="color:var(--sage-400);font-family:var(--font-mono);font-size:0.75rem;padding-top:2px;">02</span><span style="color:var(--sage-300);">TM59 dynamic thermal modelling confirms compliance before planning is submitted</span></li>
+          <li style="display:flex;gap:var(--space-3);align-items:flex-start;"><span style="color:var(--sage-400);font-family:var(--font-mono);font-size:0.75rem;padding-top:2px;">03</span><span style="color:var(--sage-300);">We work alongside your architect or M&amp;E engineer — or manage the TM59 process end to end</span></li>
+          <li style="display:flex;gap:var(--space-3);align-items:flex-start;"><span style="color:var(--sage-400);font-family:var(--font-mono);font-size:0.75rem;padding-top:2px;">04</span><span style="color:var(--sage-300);">Solutions available for new build, retrofit, and planning condition discharge</span></li>
+        </ul>
       </div>
-      <div class="product-hero-content wrap">
-        <nav class="breadcrumb"><a href="/">Home</a><span class="breadcrumb-sep">/</span><span>Solar Shading</span></nav>
-        <span class="overline" style="color:var(--sage-400)">Part O compliant</span>
-        <h1>External Solar Shading</h1>
-        <p class="lead">The only category of window treatment that satisfies Part O of the Building Regulations. External roller screens, louvres, awnings, pergolas and MicroLouvre® panels — specified, supplied and installed by one team.</p>
-
-        <div class="reg-box">
-          <div class="reg-box-header">
-            <span class="reg-box-icon">📋</span>
-            <span class="reg-box-title">Regulatory context</span>
-          </div>
-          <div class="reg-items">
-            <div class="reg-item">
-              <span class="reg-item-num">2022</span>
-              <span class="reg-item-label">Part O in force</span>
-            </div>
-            <div class="reg-item">
-              <span class="reg-item-num">2027</span>
-              <span class="reg-item-label">Future Homes Standard</span>
-            </div>
-            <div class="reg-item">
-              <span class="reg-item-num">0</span>
-              <span class="reg-item-label">Internal products that comply</span>
-            </div>
-          </div>
-        </div>
-
-        <div style="display:flex;gap:var(--sp-4);flex-wrap:wrap;margin-top:var(--sp-8)">
-          <a href="/contact/" class="btn btn--sage btn--lg">Book a Specification Call</a>
-          <a href="/knowledge/part-o-guide/" class="btn btn--outline-light btn--lg">Read the Part O Guide</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Compliance comparison -->
-    <section class="section section--dark">
-      <div class="wrap">
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-12);align-items:start">
-          <div data-reveal>
-            <span class="overline">Why external?</span>
-            <h2 style="color:var(--white);margin-top:var(--sp-4);margin-bottom:var(--sp-5)">Internal blinds intercept heat after it has entered the building. External shading stops it before it gets through the glass.</h2>
-            <p style="color:rgba(255,255,255,.65)">A well-specified external roller screen with a g-value of 0.12 reduces solar heat gain by up to 88%. The same window with an internal blind: less than 15%. The physics are unambiguous. That is why Part O and TM59 both require external solutions for compliance.</p>
-            <a href="/knowledge/external-vs-internal/" class="link-arrow" style="color:var(--sage-400);border-color:var(--sage-400);margin-top:var(--sp-8);display:inline-flex">External vs internal — full comparison</a>
-          </div>
-          <div data-reveal data-reveal="right">
-            <table class="compliance-table">
-              <thead>
-                <tr><th>Product</th><th>Part O</th><th>TM59</th><th>g-value</th></tr>
-              </thead>
-              <tbody>
-                <tr><td>External roller screen</td><td class="check">✓</td><td class="check">✓</td><td style="font-family:var(--font-mono)">0.10–0.18</td></tr>
-                <tr><td>External louvres</td><td class="check">✓</td><td class="check">✓</td><td style="font-family:var(--font-mono)">0.08–0.15</td></tr>
-                <tr><td>MicroLouvre® panels</td><td class="check">✓</td><td class="check">✓</td><td style="font-family:var(--font-mono)">0.06–0.12</td></tr>
-                <tr><td>External awning</td><td class="check">✓</td><td class="check">✓</td><td style="font-family:var(--font-mono)">0.12–0.25</td></tr>
-                <tr><td>Internal roller blind</td><td class="cross">✗</td><td class="cross">✗</td><td style="font-family:var(--font-mono)">0.55–0.75</td></tr>
-                <tr><td>Internal curtain</td><td class="cross">✗</td><td class="cross">✗</td><td style="font-family:var(--font-mono)">0.60–0.80</td></tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Product range -->
-    <section class="section">
-      <div class="wrap">
-        <div class="section-header--center" data-reveal>
-          <span class="overline">Our solar shading range</span>
-          <h2>Six external shading systems. One installer.</h2>
-          <p>Every system is designed for a different application. We specify the right one for your facade, planning constraints, glazing type and budget.</p>
-        </div>
-        <div class="product-range">
-          <div class="range-card" data-reveal data-reveal-delay="1">
-            <div class="range-card-media"><div class="img-placeholder" style="min-height:100%;border-radius:0"><span>External roller screens</span></div></div>
-            <div class="range-card-body">
-              <h3>External Roller Screens</h3>
-              <p>The most cost-effective external shading solution. Cassette-housed, motorised as standard. Available in a wide range of open and screen fabrics. g-values from 0.10.</p>
-              <span class="range-card-spec">g-value: 0.10–0.18 &nbsp;·&nbsp; Motorised</span>
-            </div>
-          </div>
-          <div class="range-card" data-reveal data-reveal-delay="2">
-            <div class="range-card-media"><div class="img-placeholder" style="min-height:100%;border-radius:0"><span>External louvres</span></div></div>
-            <div class="range-card-body">
-              <h3>Adjustable Louvres</h3>
-              <p>Aluminium aerofoil blades that tilt to track the sun. Full privacy control without sacrificing view. Ideal for balconies, facades and glazed extensions.</p>
-              <span class="range-card-spec">g-value: 0.08–0.15 &nbsp;·&nbsp; Motorised</span>
-            </div>
-          </div>
-          <div class="range-card" data-reveal data-reveal-delay="3">
-            <div class="range-card-media"><div class="img-placeholder" style="min-height:100%;border-radius:0"><span>MicroLouvre panels</span></div></div>
-            <div class="range-card-body">
-              <h3>MicroLouvre® Panels</h3>
-              <p>UK-designed and manufactured. Micro-precision aluminium fins redirect and diffuse direct sunlight whilst maintaining an unobstructed view. One of only 7 UK installers.</p>
-              <span class="range-card-spec">g-value: 0.06 &nbsp;·&nbsp; <a href="/solar-shading/microlouvre/" style="color:var(--sage-500)">Learn more →</a></span>
-            </div>
-          </div>
-          <div class="range-card" data-reveal data-reveal-delay="4">
-            <div class="range-card-media"><div class="img-placeholder" style="min-height:100%;border-radius:0"><span>Retractable awnings</span></div></div>
-            <div class="range-card-body">
-              <h3>Retractable Awnings</h3>
-              <p>For residential patios, hotel terraces and restaurant outdoor dining. Cassette-housed, wind-sensor triggered. Wide range of fabrics and projection widths.</p>
-              <span class="range-card-spec">g-value: 0.12–0.25 &nbsp;·&nbsp; Manual or motorised</span>
-            </div>
-          </div>
-          <div class="range-card" data-reveal data-reveal-delay="5">
-            <div class="range-card-media"><div class="img-placeholder" style="min-height:100%;border-radius:0"><span>Pergolas and bioclimatic</span></div></div>
-            <div class="range-card-body">
-              <h3>Bioclimatic Pergolas</h3>
-              <p>Motorised aluminium louvre roofs that open and close to control sun, rain and airflow. Weather-sealed with integrated LED and heating options.</p>
-              <span class="range-card-spec">Fully automated &nbsp;·&nbsp; Year-round use</span>
-            </div>
-          </div>
-          <div class="range-card" data-reveal data-reveal-delay="6">
-            <div class="range-card-media"><div class="img-placeholder" style="min-height:100%;border-radius:0"><span>External Venetian blinds</span></div></div>
-            <div class="range-card-body">
-              <h3>External Venetian Blinds</h3>
-              <p>Powder-coated aluminium slats that tilt to precision. High performance g-values, excellent light diffusion. Popular for office glazed facades and schools.</p>
-              <span class="range-card-spec">g-value: 0.09–0.14 &nbsp;·&nbsp; Motorised</span>
-            </div>
-          </div>
+      <div data-reveal data-reveal-delay="2">
+        <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:var(--radius-lg);padding:var(--space-7);">
+          <h3 style="color:var(--paper);font-size:var(--text-lg);margin-bottom:var(--space-5);">Compliance at a glance</h3>
+          <table style="width:100%;border-collapse:collapse;font-size:var(--text-sm);">
+            <thead>
+              <tr style="border-bottom:1px solid rgba(255,255,255,0.1);">
+                <th style="text-align:left;color:var(--sage-400);padding:var(--space-2) 0;font-weight:500;">Solution</th>
+                <th style="text-align:center;color:var(--sage-400);padding:var(--space-2) 0;font-weight:500;">Part O</th>
+                <th style="text-align:center;color:var(--sage-400);padding:var(--space-2) 0;font-weight:500;">BREEAM</th>
+                <th style="text-align:center;color:var(--sage-400);padding:var(--space-2) 0;font-weight:500;">TM59</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+                <td style="padding:var(--space-3) 0;color:var(--paper);">External Venetian Blind</td>
+                <td style="text-align:center;color:#4ade80;">✓</td>
+                <td style="text-align:center;color:#4ade80;">✓</td>
+                <td style="text-align:center;color:#4ade80;">✓</td>
+              </tr>
+              <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+                <td style="padding:var(--space-3) 0;color:var(--paper);">External Roller Blind</td>
+                <td style="text-align:center;color:#4ade80;">✓</td>
+                <td style="text-align:center;color:#4ade80;">✓</td>
+                <td style="text-align:center;color:#4ade80;">✓</td>
+              </tr>
+              <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+                <td style="padding:var(--space-3) 0;color:var(--paper);">Brise Soleil / Fin</td>
+                <td style="text-align:center;color:#4ade80;">✓</td>
+                <td style="text-align:center;color:#4ade80;">✓</td>
+                <td style="text-align:center;color:#facc15;">◐</td>
+              </tr>
+              <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+                <td style="padding:var(--space-3) 0;color:var(--paper);">Awning / Pergola</td>
+                <td style="text-align:center;color:#4ade80;">✓</td>
+                <td style="text-align:center;color:#4ade80;">✓</td>
+                <td style="text-align:center;color:#facc15;">◐</td>
+              </tr>
+              <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+                <td style="padding:var(--space-3) 0;color:var(--paper);">MicroLouvre® Screen</td>
+                <td style="text-align:center;color:#4ade80;">✓</td>
+                <td style="text-align:center;color:#4ade80;">✓</td>
+                <td style="text-align:center;color:#4ade80;">✓</td>
+              </tr>
+              <tr>
+                <td style="padding:var(--space-3) 0;color:var(--paper);">Internal blind only</td>
+                <td style="text-align:center;color:#f87171;">✗</td>
+                <td style="text-align:center;color:#facc15;">◐</td>
+                <td style="text-align:center;color:#f87171;">✗</td>
+              </tr>
+            </tbody>
+          </table>
+          <p style="margin-top:var(--space-4);font-size:var(--text-xs);color:rgba(255,255,255,0.3);">✓ Typically compliant &nbsp;◐ Orientation dependent &nbsp;✗ Insufficient alone</p>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <!-- MicroLouvre feature -->
-    <section class="section section--paper">
-      <div class="wrap">
-        <div class="microlouvre-cta" data-reveal>
-          <div>
-            <span class="overline" style="color:var(--sage-400)">Our signature credential</span>
-            <h2 style="color:var(--white);margin-top:var(--sp-4);margin-bottom:var(--sp-5)">One of only 7 UK installers of MicroLouvre®.</h2>
-            <p style="color:rgba(255,255,255,.65);max-width:50ch">UK-made precision aluminium fins that redirect direct sunlight whilst maintaining a clear view. g-value of 0.06 — the lowest of any fixed external shading product. Specified on projects across residential, healthcare and education sectors.</p>
+<!-- PRODUCT RANGE -->
+<section class="section-pad">
+  <div class="container">
+    <div class="section-header" data-reveal>
+      <p class="eyebrow">Product Range</p>
+      <h2>External shading solutions</h2>
+      <p class="lead">Every project is different. We specify the right system for your building's orientation, wind zone, and planning context.</p>
+    </div>
+
+    <div class="grid-3 gap-lg" style="margin-top:var(--space-10);">
+
+      <!-- External Venetian -->
+      <div class="card" data-reveal data-reveal-delay="1">
+        <div class="img-placeholder card-img" data-label="External venetian blind — aluminium louvres on glazed facade"></div>
+        <div class="card-body">
+          <h3 class="card-title">External Venetian Blinds</h3>
+          <p>Motorised aluminium louvres that track the sun's angle throughout the day. The highest-performing shading solution for Part O compliance. Wind-rated to Beaufort 9 with automatic retraction sensors.</p>
+          <ul style="margin-top:var(--space-4);padding-left:var(--space-5);color:var(--muted);">
+            <li>Solar factor reduction: up to 85%</li>
+            <li>View-through preserved when open</li>
+            <li>KNX, BMS and smart home integration</li>
+            <li>Powder-coated in any RAL colour</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- External Roller -->
+      <div class="card" data-reveal data-reveal-delay="2">
+        <div class="img-placeholder card-img" data-label="External roller blind — fabric screen on modern house"></div>
+        <div class="card-body">
+          <h3 class="card-title">External Roller Blinds</h3>
+          <p>High-tensile woven fabric screens that block solar gain while preserving outward visibility. Ideal for bifold and sliding-door openings. Guide-rail system maintains fabric tension in wind.</p>
+          <ul style="margin-top:var(--space-4);padding-left:var(--space-5);color:var(--muted);">
+            <li>Openness factors from 1% to 10%</li>
+            <li>Zip-channel side guide option</li>
+            <li>Up to 6 m wide without joins</li>
+            <li>BREEAM Hea 04 eligible</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Awnings -->
+      <div class="card" data-reveal data-reveal-delay="3">
+        <div class="img-placeholder card-img" data-label="Cassette awning above bi-fold doors — garden setting"></div>
+        <div class="card-body">
+          <h3 class="card-title">Awnings &amp; Pergolas</h3>
+          <p>Cassette awnings from leading European manufacturers, including heated pergola systems for year-round outdoor living. Perfect for south-facing terraces and orangeries.</p>
+          <ul style="margin-top:var(--space-4);padding-left:var(--space-5);color:var(--muted);">
+            <li>Projection up to 5 m</li>
+            <li>Integrated LED and infrared heating options</li>
+            <li>Wind and sun sensors as standard</li>
+            <li>Fully retractable cassette enclosure</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Brise Soleil -->
+      <div class="card" data-reveal data-reveal-delay="4">
+        <div class="img-placeholder card-img" data-label="Brise soleil fins on commercial/residential facade"></div>
+        <div class="card-body">
+          <h3 class="card-title">Brise Soleil &amp; Fins</h3>
+          <p>Fixed or adjustable architectural louvre fins that become part of the building's facade design. Specified for new-build developments and planning-sensitive sites where a permanent shading language is required.</p>
+          <ul style="margin-top:var(--space-4);padding-left:var(--space-5);color:var(--muted);">
+            <li>Aluminium or timber-effect cladding</li>
+            <li>Fixed, adjustable or motorised</li>
+            <li>Designed to planning drawings</li>
+            <li>Supplied and installed</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Screens -->
+      <div class="card" data-reveal data-reveal-delay="5">
+        <div class="img-placeholder card-img" data-label="External perforated screen panel — contemporary home"></div>
+        <div class="card-body">
+          <h3 class="card-title">Perforated Screen Panels</h3>
+          <p>Powder-coated aluminium perforated panels mounted as secondary facades or privacy screens. Combines solar control, privacy, and architectural texture. Popular on balconies, stairwells, and plant-room enclosures.</p>
+          <ul style="margin-top:var(--space-4);padding-left:var(--space-5);color:var(--muted);">
+            <li>Custom perforation patterns available</li>
+            <li>Fixed or sliding configurations</li>
+            <li>Fire-rated options for commercial use</li>
+            <li>Anti-graffiti coating available</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- MicroLouvre — moved to last, no special callout -->
+      <div class="card" data-reveal data-reveal-delay="6">
+        <div class="img-placeholder card-img" data-label="MicroLouvre screen panel — close-up of micro-louvre blades"></div>
+        <div class="card-body">
+          <h3 class="card-title">MicroLouvre® Screens</h3>
+          <p>Precision-engineered panels containing hundreds of micro-scale aerofoil blades. Blocks direct solar radiation whilst maintaining natural daylight and outward views — an elegant option where conventional external blinds are not feasible.</p>
+          <ul style="margin-top:var(--space-4);padding-left:var(--space-5);color:var(--muted);">
+            <li>No moving parts — maintenance-free</li>
+            <li>Slimline frame suits heritage facades</li>
+            <li>Part O and TM59 compliant</li>
+            <li>Frameless and framed systems</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- STATS STRIP -->
+<div class="stats-strip">
+  <div class="stat-item" data-reveal>
+    <span class="stat-number" data-target="60">0</span><span class="stat-suffix">–85%</span>
+    <span class="stat-label">Solar factor reduction</span>
+  </div>
+  <div class="stat-item" data-reveal data-reveal-delay="2">
+    <span class="stat-number" data-target="22">0</span><span class="stat-suffix">+</span>
+    <span class="stat-label">Years of solar shading expertise</span>
+  </div>
+  <div class="stat-item" data-reveal data-reveal-delay="3">
+    <span class="stat-number" data-target="6">0</span>
+    <span class="stat-label">External shading systems specified</span>
+  </div>
+  <div class="stat-item" data-reveal data-reveal-delay="4">
+    <span class="stat-number" data-target="100">0</span><span class="stat-suffix">%</span>
+    <span class="stat-label">Surveyed &amp; installed in-house</span>
+  </div>
+</div>
+
+<!-- MOTORISATION & INTEGRATION -->
+<section class="section-pad bg-paper">
+  <div class="container">
+    <div class="grid-2 gap-lg align-center">
+      <div data-reveal>
+        <div class="img-placeholder" style="height:480px;border-radius:var(--radius-lg);" data-label="Control system — smart home tablet showing blind automation"></div>
+      </div>
+      <div data-reveal data-reveal-delay="2">
+        <p class="eyebrow">Automation &amp; Controls</p>
+        <h2>Intelligent solar management</h2>
+        <p>External solar shading is most effective when it responds to the sun automatically. We integrate with all major building management and smart-home platforms.</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4);margin-top:var(--space-7);">
+          <div style="padding:var(--space-5);background:white;border-radius:var(--radius-md);box-shadow:var(--shadow-sm);">
+            <h4 style="font-size:var(--text-sm);font-weight:600;margin-bottom:var(--space-2);">Smart Home</h4>
+            <p style="font-size:var(--text-sm);color:var(--muted);">Control4, Lutron, Crestron, Loxone, HomeKit, KNX</p>
           </div>
-          <div style="flex-shrink:0">
-            <a href="/solar-shading/microlouvre/" class="btn btn--sage btn--lg">MicroLouvre® detail page</a>
+          <div style="padding:var(--space-5);background:white;border-radius:var(--radius-md);box-shadow:var(--shadow-sm);">
+            <h4 style="font-size:var(--text-sm);font-weight:600;margin-bottom:var(--space-2);">BMS Integration</h4>
+            <p style="font-size:var(--text-sm);color:var(--muted);">BACnet, Modbus, DALI, proprietary protocols</p>
+          </div>
+          <div style="padding:var(--space-5);background:white;border-radius:var(--radius-md);box-shadow:var(--shadow-sm);">
+            <h4 style="font-size:var(--text-sm);font-weight:600;margin-bottom:var(--space-2);">Sun Sensors</h4>
+            <p style="font-size:var(--text-sm);color:var(--muted);">Automatic deployment on sun, retraction in wind</p>
+          </div>
+          <div style="padding:var(--space-5);background:white;border-radius:var(--radius-md);box-shadow:var(--shadow-sm);">
+            <h4 style="font-size:var(--text-sm);font-weight:600;margin-bottom:var(--space-2);">Scheduling</h4>
+            <p style="font-size:var(--text-sm);color:var(--muted);">Time-of-day programs, astronomical clock</p>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <!-- Motorisation -->
-    <section class="section">
-      <div class="wrap">
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-16);align-items:center">
-          <div data-reveal>
-            <div class="img-placeholder" style="aspect-ratio:4/3;border-radius:var(--radius-md)">
-              <span class="img-placeholder-icon">📱</span>
-              <span>Smart control — Somfy app or BMS interface</span>
-            </div>
-          </div>
-          <div data-reveal data-reveal="right">
-            <span class="overline">Automation</span>
-            <h2 style="margin-top:var(--sp-4);margin-bottom:var(--sp-5)">Solar-triggered. Wind-safe. BMS-integrated.</h2>
-            <p>All external shading systems are motorised as standard. Sun sensors trigger automatic deployment when solar intensity exceeds threshold. Wind sensors retract in gusts. Somfy io-homecontrol integrates with Apple HomeKit, Google Home and any Modbus or KNX building management system.</p>
-            <a href="/knowledge/motorisation-guide/" class="link-arrow" style="margin-top:var(--sp-8);display:inline-flex">Full motorisation guide</a>
-          </div>
-        </div>
+<!-- PROCESS -->
+<section class="section-pad">
+  <div class="container">
+    <div class="section-header" data-reveal>
+      <p class="eyebrow">How it works</p>
+      <h2>From specification to installation</h2>
+    </div>
+    <div class="grid-4 gap-lg" style="margin-top:var(--space-10);">
+      <div data-reveal data-reveal-delay="1" style="text-align:center;">
+        <div style="width:56px;height:56px;border-radius:50%;background:var(--sage-50);border:2px solid var(--sage-200);display:flex;align-items:center;justify-content:center;margin:0 auto var(--space-4);font-family:var(--font-mono);font-size:var(--text-sm);color:var(--sage-600);">01</div>
+        <h3 style="font-size:var(--text-lg);">Site survey</h3>
+        <p style="color:var(--muted);">We assess orientation, wind zone, planning constraints, and building control requirements.</p>
       </div>
-    </section>
+      <div data-reveal data-reveal-delay="2" style="text-align:center;">
+        <div style="width:56px;height:56px;border-radius:50%;background:var(--sage-50);border:2px solid var(--sage-200);display:flex;align-items:center;justify-content:center;margin:0 auto var(--space-4);font-family:var(--font-mono);font-size:var(--text-sm);color:var(--sage-600);">02</div>
+        <h3 style="font-size:var(--text-lg);">System specification</h3>
+        <p style="color:var(--muted);">We recommend the optimum system, fabric, and control specification — with TM59 modelling if required.</p>
+      </div>
+      <div data-reveal data-reveal-delay="3" style="text-align:center;">
+        <div style="width:56px;height:56px;border-radius:50%;background:var(--sage-50);border:2px solid var(--sage-200);display:flex;align-items:center;justify-content:center;margin:0 auto var(--space-4);font-family:var(--font-mono);font-size:var(--text-sm);color:var(--sage-600);">03</div>
+        <h3 style="font-size:var(--text-lg);">Manufacturing</h3>
+        <p style="color:var(--muted);">Made to measure — typically 4–8 weeks depending on system and volume.</p>
+      </div>
+      <div data-reveal data-reveal-delay="4" style="text-align:center;">
+        <div style="width:56px;height:56px;border-radius:50%;background:var(--sage-50);border:2px solid var(--sage-200);display:flex;align-items:center;justify-content:center;margin:0 auto var(--space-4);font-family:var(--font-mono);font-size:var(--text-sm);color:var(--sage-600);">04</div>
+        <h3 style="font-size:var(--text-lg);">Installation</h3>
+        <p style="color:var(--muted);">Our own installation team — no subcontractors. Full handover, user training, and aftercare.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Sectors -->
-    <section class="section section--paper">
-      <div class="wrap">
-        <div class="section-header--center" data-reveal>
-          <span class="overline">Applications</span>
-          <h2>Residential, commercial, education and healthcare.</h2>
-        </div>
-        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:var(--sp-6)">
-          <div style="text-align:center;padding:var(--sp-6)" data-reveal data-reveal-delay="1">
-            <div style="font-size:2.5rem;margin-bottom:var(--sp-4)">🏠</div>
-            <h3 style="font-size:var(--text-lg);margin-bottom:var(--sp-3)">Residential</h3>
-            <p style="font-size:var(--text-sm);color:var(--sage-700)">New builds, extensions, glazed garden rooms. Part O compliance from planning stage.</p>
-          </div>
-          <div style="text-align:center;padding:var(--sp-6)" data-reveal data-reveal-delay="2">
-            <div style="font-size:2.5rem;margin-bottom:var(--sp-4)">🏢</div>
-            <h3 style="font-size:var(--text-lg);margin-bottom:var(--sp-3)">Offices</h3>
-            <p style="font-size:var(--text-sm);color:var(--sage-700)">BREEAM credits, TM59 compliance, glare control for screen-based work.</p>
-          </div>
-          <div style="text-align:center;padding:var(--sp-6)" data-reveal data-reveal-delay="3">
-            <div style="font-size:2.5rem;margin-bottom:var(--sp-4)">🎓</div>
-            <h3 style="font-size:var(--text-lg);margin-bottom:var(--sp-3)">Education</h3>
-            <p style="font-size:var(--text-sm);color:var(--sage-700)">Classroom overheating solved. BMS-triggered for term-time automation.</p>
-          </div>
-          <div style="text-align:center;padding:var(--sp-6)" data-reveal data-reveal-delay="4">
-            <div style="font-size:2.5rem;margin-bottom:var(--sp-4)">🏥</div>
-            <h3 style="font-size:var(--text-lg);margin-bottom:var(--sp-3)">Healthcare</h3>
-            <p style="font-size:var(--text-sm);color:var(--sage-700)">HTM compliance, infection control, patient environment temperature management.</p>
-          </div>
-        </div>
+<!-- CTA -->
+<section class="cta-band">
+  <div class="container">
+    <div data-reveal style="text-align:center;">
+      <p class="eyebrow" style="color:var(--sage-400);">Ready to specify?</p>
+      <h2 style="color:var(--paper);">Discuss your project with us</h2>
+      <p style="color:rgba(250,248,243,0.7);max-width:540px;margin:var(--space-4) auto var(--space-8);">Whether you have planning drawings ready or are at early design stage, we can advise on the right system and compliance pathway.</p>
+      <div style="display:flex;gap:var(--space-4);justify-content:center;flex-wrap:wrap;">
+        <a href="/contact/" class="btn btn-primary">Request a Consultation</a>
+        <a href="/trade/" class="btn btn-ghost-paper">Trade &amp; Specification Enquiries</a>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <!-- CTA -->
-    <section class="cta-band">
-      <div class="wrap" style="position:relative;z-index:1">
-        <p class="overline" style="color:var(--sage-400);margin-bottom:var(--sp-4)" data-reveal>Get specified</p>
-        <h2 data-reveal data-reveal-delay="1">Start with a specification call.</h2>
-        <p data-reveal data-reveal-delay="2">We work with architects, developers, M&amp;E consultants and homeowners. We advise on product selection, g-values, motorisation and Part O compliance from concept stage.</p>
-        <div class="cta-band-actions" data-reveal data-reveal-delay="3">
-          <a href="/contact/" class="btn btn--sage btn--lg">Book a Specification Call</a>
-          <a href="/knowledge/part-o-guide/" class="btn btn--outline-light btn--lg">Part O Guide</a>
-        </div>
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">Creative Curtains &amp; Blinds</div>
+        <p>Bespoke window treatments, expertly made and installed across Sussex, Surrey, Kent and London since 2002.</p>
+        <address>
+          9 North Street<br>
+          Hailsham, BN27 1DQ<br>
+          East Sussex
+        </address>
       </div>
-    </section>
-  </main>
-  <footer class="site-footer"><div class="wrap"><div class="footer-grid"><div class="footer-brand"><div style="font-family:var(--font-serif);font-size:var(--text-lg);color:var(--white);font-weight:500">Creative Curtains &amp; Blinds</div><p>Bespoke window treatments and external solar shading.</p></div><div><h3 class="footer-heading">Products</h3><ul class="footer-links"><li><a href="/curtains/" class="footer-link">Curtains</a></li><li><a href="/blinds/" class="footer-link">Blinds</a></li><li><a href="/shutters/" class="footer-link">Shutters</a></li><li><a href="/solar-shading/" class="footer-link">Solar Shading</a></li></ul></div><div><h3 class="footer-heading">Company</h3><ul class="footer-links"><li><a href="/projects/" class="footer-link">Projects</a></li><li><a href="/about/" class="footer-link">About</a></li><li><a href="/knowledge/" class="footer-link">Knowledge</a></li></ul></div><div><h3 class="footer-heading">Contact</h3><div class="footer-contact-item"><span class="footer-contact-icon">📞</span><a href="tel:01323844555">01323 844555</a></div><div class="footer-contact-item"><span class="footer-contact-icon">✉️</span><a href="mailto:callum@creativecurtains.uk.com">callum@creativecurtains.uk.com</a></div></div></div><div class="footer-bottom"><p class="footer-legal">&copy; 2026 Creative Curtains and Blinds Ltd. &nbsp;·&nbsp; <a href="/privacy/">Privacy</a></p></div></div></footer>
-  <script>const nav=document.getElementById('site-nav');window.addEventListener('scroll',()=>{nav.classList.toggle('is-scrolled',window.scrollY>60);nav.classList.toggle('is-transparent',window.scrollY<=60)},{passive:true});document.getElementById('nav-toggle').addEventListener('click',function(){this.classList.toggle('is-open');document.getElementById('nav-mobile').classList.toggle('is-open');});const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('is-visible');obs.unobserve(e.target);}}),{threshold:0.1,rootMargin:'0px 0px -50px 0px'});document.querySelectorAll('[data-reveal]').forEach(el=>obs.observe(el));</script>
+      <div class="footer-col">
+        <h4>Products</h4>
+        <ul>
+          <li><a href="/curtains/">Curtains</a></li>
+          <li><a href="/blinds/">Blinds</a></li>
+          <li><a href="/shutters/">Shutters</a></li>
+          <li><a href="/solar-shading/">External Shading</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Sectors</h4>
+        <ul>
+          <li><a href="/sectors/residential/">Residential</a></li>
+          <li><a href="/sectors/hotels/">Hotels &amp; Hospitality</a></li>
+          <li><a href="/sectors/healthcare/">Healthcare</a></li>
+          <li><a href="/sectors/schools/">Schools &amp; Education</a></li>
+          <li><a href="/sectors/offices/">Offices</a></li>
+          <li><a href="/sectors/developers/">Developers</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about/">About Us</a></li>
+          <li><a href="/projects/">Projects</a></li>
+          <li><a href="/showroom/">Showroom</a></li>
+          <li><a href="/trade/">Trade Portal</a></li>
+          <li><a href="/knowledge/">Knowledge Hub</a></li>
+          <li><a href="/contact/">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Creative Curtains and Blinds Ltd. All rights reserved.</p>
+      <nav class="footer-legal">
+        <a href="/privacy/">Privacy Policy</a>
+        <a href="/accessibility/">Accessibility</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Nav scroll behaviour
+const nav = document.getElementById('siteNav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('is-scrolled', window.scrollY > 60);
+}, { passive: true });
+
+// Hamburger
+document.getElementById('navHamburger').addEventListener('click', function() {
+  document.getElementById('navLinks').classList.toggle('is-open');
+  this.classList.toggle('is-open');
+});
+
+// Scroll reveal
+const revealEls = document.querySelectorAll('[data-reveal]');
+const revealObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); revealObs.unobserve(e.target); } });
+}, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+revealEls.forEach(el => revealObs.observe(el));
+
+// Stat counters
+const counters = document.querySelectorAll('.stat-number[data-target]');
+const counterObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    const el = e.target, target = +el.dataset.target, dur = 1800;
+    let start = null;
+    const step = ts => {
+      if (!start) start = ts;
+      const p = Math.min((ts - start) / dur, 1);
+      el.textContent = Math.floor(p * p * target);
+      if (p < 1) requestAnimationFrame(step); else el.textContent = target;
+    };
+    requestAnimationFrame(step);
+    counterObs.unobserve(el);
+  });
+}, { threshold: 0.5 });
+counters.forEach(c => counterObs.observe(c));
+</script>
 </body>
 </html>
