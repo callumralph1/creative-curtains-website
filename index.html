@@ -1,400 +1,1277 @@
 <!DOCTYPE html>
 <html lang="en-GB">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Curtains, Blinds, Shutters &amp; Solar Shading | Creative Curtains &amp; Blinds</title>
-<meta name="description" content="Bespoke curtains, blinds, shutters and external solar shading for Sussex, Kent, Surrey and London. Part O compliant. Installed by people who care more than they need to.">
-<link rel="canonical" href="https://www.creativecurtains.uk.com/">
-<meta property="og:title" content="Creative Curtains &amp; Blinds">
-<meta property="og:description" content="Bespoke window treatments and external solar shading. Specified for how we live in 2026.">
-<meta property="og:url" content="https://www.creativecurtains.uk.com/">
-<meta property="og:type" content="website">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Creative Curtains & Blinds","url":"https://www.creativecurtains.uk.com","telephone":"+441323844555","email":"callum@creativecurtains.uk.com","address":{"@type":"PostalAddress","streetAddress":"9 North Street","addressLocality":"Hailsham","addressRegion":"East Sussex","postalCode":"BN27 1DQ","addressCountry":"GB"},"geo":{"@type":"GeoCoordinates","latitude":50.8612,"longitude":0.2595},"openingHours":["Mo-Fr 09:00-17:30","Sa 09:00-16:00"],"areaServed":["East Sussex","West Sussex","Kent","Surrey","London"]}</script>
-<link rel="stylesheet" href="/tokens.css">
-<link rel="stylesheet" href="/global.css">
-<link rel="stylesheet" href="/home.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curtains, Blinds, Shutters &amp; Solar Shading | Creative Curtains &amp; Blinds</title>
+  <meta name="description" content="Bespoke curtains, blinds, shutters and external solar shading for residential and commercial projects across Sussex, Kent, Surrey and London. Specialists in Part O compliance.">
+  <link rel="canonical" href="https://www.creativecurtains.uk.com/">
+  <meta property="og:title" content="Creative Curtains &amp; Blinds">
+  <meta property="og:description" content="Bespoke window treatments and external solar shading. Designed for how we live in 2026.">
+  <meta property="og:url" content="https://www.creativecurtains.uk.com/">
+  <meta property="og:type" content="website">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Creative Curtains and Blinds","telephone":"01323844555","email":"callum@creativecurtains.uk.com","address":{"@type":"PostalAddress","streetAddress":"9 North Street","addressLocality":"Hailsham","postalCode":"BN27 1DQ","addressCountry":"GB"},"url":"https://www.creativecurtains.uk.com/","areaServed":["Sussex","Kent","Surrey","London"]}</script>
+  <link rel="stylesheet" href="/tokens.css">
+  <link rel="stylesheet" href="/global.css">
+  <style>
+    /* ── Homepage-specific styles ── */
+
+    /* Hero */
+    .hero {
+      min-height: 100svh;
+      display: grid;
+      grid-template-rows: 1fr;
+      position: relative;
+      background: var(--sage-900);
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .hero-bg-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.28;
+    }
+
+    .hero-bg-gradient {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to right, rgba(26,29,26,0.85) 45%, rgba(26,29,26,0.3) 100%),
+        linear-gradient(to top, rgba(26,29,26,0.6) 0%, transparent 40%);
+    }
+
+    /* Decorative noise */
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none;
+      opacity: 0.4;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding-bottom: clamp(4rem, 8vw, 7rem);
+      padding-top: calc(72px + 6rem);
+    }
+
+    .hero-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: var(--sp-4);
+      margin-bottom: var(--sp-6);
+      opacity: 0;
+      animation: heroFadeUp 0.9s var(--ease-out-expo) 0.3s forwards;
+    }
+
+    .hero-eyebrow-line {
+      width: 40px;
+      height: 1px;
+      background: var(--sage-400);
+    }
+
+    .hero-eyebrow-text {
+      font-family: var(--font-sans);
+      font-size: var(--text-xs);
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--sage-400);
+    }
+
+    .hero-headline {
+      font-family: var(--font-serif);
+      font-size: var(--text-display);
+      font-weight: 400;
+      line-height: 1.0;
+      letter-spacing: -0.02em;
+      color: var(--white);
+      max-width: 14ch;
+      margin-bottom: var(--sp-8);
+      opacity: 0;
+      animation: heroFadeUp 1s var(--ease-out-expo) 0.5s forwards;
+    }
+
+    .hero-headline em {
+      font-style: italic;
+      color: var(--sage-400);
+    }
+
+    .hero-sub {
+      font-family: var(--font-sans);
+      font-size: var(--text-md);
+      color: rgba(255,255,255,0.6);
+      max-width: 44ch;
+      line-height: 1.6;
+      margin-bottom: var(--sp-10);
+      opacity: 0;
+      animation: heroFadeUp 1s var(--ease-out-expo) 0.7s forwards;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: var(--sp-4);
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: heroFadeUp 1s var(--ease-out-expo) 0.9s forwards;
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: var(--sp-10);
+      right: var(--gutter);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--sp-3);
+      color: rgba(255,255,255,0.35);
+      font-size: var(--text-xs);
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      opacity: 0;
+      animation: heroFadeUp 1s var(--ease-out-expo) 1.2s forwards;
+    }
+
+    .hero-scroll-line {
+      width: 1px;
+      height: 60px;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.35), transparent);
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes heroFadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes scrollPulse {
+      0%, 100% { transform: scaleY(1); opacity: 1; }
+      50%       { transform: scaleY(0.7); opacity: 0.5; }
+    }
+
+    /* Hero placeholder */
+    .hero-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #1A1D1A 0%, #2D332E 50%, #1A1D1A 100%);
+    }
+
+    .hero-placeholder-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(162,183,164,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(162,183,164,0.06) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+
+    .hero-placeholder-label {
+      position: relative;
+      font-family: var(--font-mono);
+      font-size: var(--text-xs);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(162,183,164,0.4);
+      border: 1px solid rgba(162,183,164,0.15);
+      padding: var(--sp-3) var(--sp-6);
+      border-radius: var(--radius-sm);
+    }
+
+    /* Pillar products */
+    .pillars {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+    }
+
+    .pillar {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 3/4;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      cursor: pointer;
+      background: var(--sage-800);
+    }
+
+    .pillar-bg {
+      position: absolute;
+      inset: 0;
+      transition: transform var(--dur-slower) var(--ease-out-expo);
+    }
+
+    .pillar:hover .pillar-bg { transform: scale(1.06); }
+
+    .pillar-bg-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.6;
+      transition: opacity var(--dur-slow);
+    }
+
+    .pillar:hover .pillar-bg-img { opacity: 0.45; }
+
+    .pillar-bg-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(26,29,26,0.9) 0%, rgba(26,29,26,0.2) 60%, transparent 100%);
+    }
+
+    .pillar-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--sage-800);
+    }
+
+    .pillar-placeholder-label {
+      font-family: var(--font-mono);
+      font-size: var(--text-xs);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(162,183,164,0.3);
+      transform: rotate(-90deg);
+      white-space: nowrap;
+    }
+
+    .pillar-content {
+      position: relative;
+      z-index: 1;
+      padding: var(--sp-8);
+      transition: transform var(--dur-slow) var(--ease-out-expo);
+    }
+
+    .pillar:hover .pillar-content { transform: translateY(-8px); }
+
+    .pillar-number {
+      font-family: var(--font-mono);
+      font-size: var(--text-xs);
+      letter-spacing: 0.12em;
+      color: var(--sage-400);
+      margin-bottom: var(--sp-3);
+      display: block;
+    }
+
+    .pillar-title {
+      font-family: var(--font-serif);
+      font-size: var(--text-2xl);
+      font-weight: 400;
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: var(--sp-4);
+    }
+
+    .pillar-desc {
+      font-size: var(--text-sm);
+      color: rgba(255,255,255,0.55);
+      line-height: 1.55;
+      max-width: 28ch;
+      margin-bottom: var(--sp-5);
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height var(--dur-slow) var(--ease-out-expo),
+                  opacity var(--dur-slow);
+      opacity: 0;
+    }
+
+    .pillar:hover .pillar-desc {
+      max-height: 80px;
+      opacity: 1;
+    }
+
+    .pillar-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--sp-2);
+      font-size: var(--text-xs);
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--sage-400);
+      transition: gap var(--dur-base) var(--ease-out-expo);
+    }
+
+    .pillar:hover .pillar-cta { gap: var(--sp-4); }
+
+    /* Marquee ticker */
+    .ticker {
+      background: var(--sage-400);
+      padding-block: var(--sp-4);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .ticker-track {
+      display: flex;
+      gap: var(--sp-10);
+      width: max-content;
+      animation: ticker 30s linear infinite;
+    }
+
+    .ticker:hover .ticker-track { animation-play-state: paused; }
+
+    .ticker-item {
+      display: flex;
+      align-items: center;
+      gap: var(--sp-4);
+      font-family: var(--font-sans);
+      font-size: var(--text-sm);
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--white);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .ticker-dot {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.5);
+      flex-shrink: 0;
+    }
+
+    @keyframes ticker {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    /* Feature split */
+    .feature-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 600px;
+    }
+
+    .feature-split-media {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .feature-split-media .img-placeholder {
+      min-height: 100%;
+      border-radius: 0;
+    }
+
+    .feature-split-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(3rem, 8vw, 7rem);
+      background: var(--sage-900);
+    }
+
+    .feature-split-content h2 {
+      color: var(--white);
+      margin-bottom: var(--sp-5);
+    }
+
+    .feature-split-content p {
+      color: rgba(255,255,255,0.65);
+      margin-bottom: var(--sp-8);
+    }
+
+    /* Project grid */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto auto;
+      gap: var(--sp-4);
+    }
+
+    .project-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      background: var(--sage-800);
+    }
+
+    .project-card--featured {
+      grid-column: span 2;
+      aspect-ratio: 16/9;
+    }
+
+    .project-card:not(.project-card--featured) {
+      aspect-ratio: 4/3;
+    }
+
+    .project-card-bg {
+      position: absolute;
+      inset: 0;
+      transition: transform var(--dur-slower) var(--ease-out-expo);
+    }
+
+    .project-card:hover .project-card-bg { transform: scale(1.05); }
+
+    .project-card-bg .img-placeholder {
+      min-height: 100%;
+      border-radius: 0;
+    }
+
+    .project-card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(26,29,26,0.85) 0%, rgba(26,29,26,0.1) 60%, transparent 100%);
+    }
+
+    .project-card-content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: var(--sp-6);
+      z-index: 1;
+    }
+
+    .project-card-tag {
+      font-family: var(--font-sans);
+      font-size: var(--text-xs);
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--sage-400);
+      display: block;
+      margin-bottom: var(--sp-2);
+    }
+
+    .project-card-title {
+      font-family: var(--font-serif);
+      font-size: var(--text-xl);
+      color: var(--white);
+      font-weight: 400;
+      line-height: 1.2;
+    }
+
+    .project-card--featured .project-card-title {
+      font-size: var(--text-2xl);
+    }
+
+    .project-card-arrow {
+      position: absolute;
+      top: var(--sp-5);
+      right: var(--sp-5);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-size: 16px;
+      transition: background var(--dur-base), border-color var(--dur-base), transform var(--dur-base) var(--ease-spring);
+      opacity: 0;
+    }
+
+    .project-card:hover .project-card-arrow {
+      opacity: 1;
+      transform: rotate(-45deg);
+      background: var(--sage-400);
+      border-color: var(--sage-400);
+    }
+
+    /* Knowledge cards */
+    .knowledge-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--sp-6);
+    }
+
+    .knowledge-card {
+      background: var(--white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: var(--sp-8);
+      transition: transform var(--dur-slow) var(--ease-out-expo),
+                  box-shadow var(--dur-slow) var(--ease-out-expo),
+                  border-color var(--dur-slow);
+    }
+
+    .knowledge-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--sage-300);
+    }
+
+    .knowledge-card-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-sm);
+      background: var(--sage-50);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      margin-bottom: var(--sp-5);
+    }
+
+    .knowledge-card h3 {
+      font-size: var(--text-lg);
+      margin-bottom: var(--sp-3);
+    }
+
+    .knowledge-card p {
+      font-size: var(--text-sm);
+      color: var(--sage-700);
+      margin-bottom: var(--sp-5);
+    }
+
+    /* Testimonial */
+    .testimonial-section {
+      background: var(--paper-2);
+      padding-block: clamp(5rem, 10vw, 9rem);
+    }
+
+    .testimonial-quote {
+      font-family: var(--font-serif);
+      font-size: var(--text-2xl);
+      font-style: italic;
+      font-weight: 400;
+      line-height: 1.4;
+      color: var(--sage-900);
+      max-width: 22ch;
+      margin-bottom: var(--sp-8);
+    }
+
+    .testimonial-quote::before {
+      content: '\201C';
+      color: var(--sage-400);
+      font-size: 1.5em;
+      line-height: 0;
+      vertical-align: -0.4em;
+      margin-right: var(--sp-1);
+    }
+
+    .testimonial-attr {
+      display: flex;
+      align-items: center;
+      gap: var(--sp-4);
+    }
+
+    .testimonial-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--sage-200);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-serif);
+      font-size: var(--text-lg);
+      color: var(--sage-700);
+    }
+
+    .testimonial-name {
+      font-weight: 500;
+      font-size: var(--text-base);
+      color: var(--sage-900);
+    }
+
+    .testimonial-role {
+      font-size: var(--text-sm);
+      color: var(--sage-600);
+    }
+
+    /* Sector strip */
+    .sector-strip {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: var(--sp-4);
+    }
+
+    .sector-tile {
+      background: var(--sage-50);
+      border: 1px solid var(--sage-200);
+      border-radius: var(--radius-md);
+      padding: var(--sp-6);
+      text-align: center;
+      transition: background var(--dur-base), border-color var(--dur-base), transform var(--dur-slow) var(--ease-spring);
+    }
+
+    .sector-tile:hover {
+      background: var(--sage-900);
+      border-color: var(--sage-900);
+      transform: translateY(-3px);
+    }
+
+    .sector-tile:hover .sector-tile-icon,
+    .sector-tile:hover .sector-tile-name {
+      color: var(--white);
+    }
+
+    .sector-tile-icon {
+      font-size: 28px;
+      margin-bottom: var(--sp-3);
+      display: block;
+      transition: color var(--dur-base);
+    }
+
+    .sector-tile-name {
+      font-family: var(--font-serif);
+      font-size: var(--text-base);
+      color: var(--sage-900);
+      transition: color var(--dur-base);
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .pillars { grid-template-columns: repeat(2, 1fr); }
+      .projects-grid { grid-template-columns: 1fr 1fr; }
+      .project-card--featured { grid-column: span 2; }
+      .knowledge-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 768px) {
+      .hero-headline { font-size: clamp(2.8rem, 12vw, 4.5rem); }
+      .pillars { grid-template-columns: 1fr 1fr; }
+      .feature-split { grid-template-columns: 1fr; }
+      .feature-split-media { min-height: 320px; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .project-card--featured { grid-column: span 1; }
+      .knowledge-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 480px) {
+      .pillars { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
-<a class="skip-link" href="#main">Skip to main content</a>
+  <!-- ── Navigation ── -->
+  <nav class="site-nav is-transparent" id="site-nav" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo" aria-label="Creative Curtains &amp; Blinds home">
+        <span class="nav-logo-text">Creative Curtains<br>&amp; Blinds</span>
+      </a>
 
-<nav class="site-nav" aria-label="Main navigation">
-<div class="wrap">
-<a href="/" class="nav-logo" aria-label="Creative Curtains &amp; Blinds home">
-<img src="/assets/images/logo.png" alt="Creative Curtains &amp; Blinds" width="120" height="40">
-</a>
-<ul class="nav-links" role="list">
-<li><a href="/solar-shading/">Solar Shading</a></li>
-<li class="nav-dropdown">
-<button class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false">Products<svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-<ul class="nav-dropdown-menu" role="list">
-<li><a href="/curtains/">Curtains</a></li>
-<li><a href="/blinds/">Blinds</a></li>
-<li><a href="/shutters/">Shutters</a></li>
-<li><a href="/solar-shading/">External Solar Shading</a></li>
-</ul>
-</li>
-<li class="nav-dropdown">
-<button class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false">Sectors<svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-<ul class="nav-dropdown-menu" role="list">
-<li><a href="/sectors/residential/">Residential</a></li>
-<li><a href="/sectors/architects-designers/">Architects &amp; Designers</a></li>
-<li><a href="/sectors/hotels/">Hotels &amp; Hospitality</a></li>
-<li><a href="/sectors/schools/">Independent Schools</a></li>
-<li><a href="/sectors/healthcare/">Healthcare</a></li>
-<li><a href="/sectors/offices/">Commercial Offices</a></li>
-<li><a href="/sectors/developers/">Developers</a></li>
-</ul>
-</li>
-<li><a href="/projects/">Projects</a></li>
-<li><a href="/knowledge/">Knowledge</a></li>
-<li><a href="/trade/">Trade</a></li>
-<li><a href="/about/">About</a></li>
-</ul>
-<div class="nav-cta">
-<a href="tel:01323844555" class="nav-tel">01323 844555</a>
-<a href="/contact/" class="btn btn--primary">Book Consultation</a>
-</div>
-<button class="nav-toggle" aria-label="Open navigation" aria-expanded="false"><span></span><span></span><span></span></button>
-</div>
-</nav>
+      <ul class="nav-links" role="list">
+        <li class="nav-dropdown">
+          <button class="nav-link" aria-haspopup="true" aria-expanded="false">
+            Products
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 4l4 4 4-4"/></svg>
+          </button>
+          <div class="nav-dropdown-menu" role="menu">
+            <a class="nav-dropdown-item" href="/curtains/" role="menuitem">
+              <span class="nav-dropdown-icon">🪟</span>
+              <div><strong>Curtains</strong><br><small style="color:var(--sage-600);font-size:11px">Bespoke made-to-measure</small></div>
+            </a>
+            <a class="nav-dropdown-item" href="/blinds/" role="menuitem">
+              <span class="nav-dropdown-icon">🏮</span>
+              <div><strong>Blinds</strong><br><small style="color:var(--sage-600);font-size:11px">Roller, Roman, Venetian &amp; more</small></div>
+            </a>
+            <a class="nav-dropdown-item" href="/shutters/" role="menuitem">
+              <span class="nav-dropdown-icon">🔲</span>
+              <div><strong>Shutters</strong><br><small style="color:var(--sage-600);font-size:11px">Plantation &amp; solid panel</small></div>
+            </a>
+            <a class="nav-dropdown-item" href="/solar-shading/" role="menuitem">
+              <span class="nav-dropdown-icon">☀️</span>
+              <div><strong>Solar Shading</strong><br><small style="color:var(--sage-600);font-size:11px">External &amp; Part O compliant</small></div>
+            </a>
+          </div>
+        </li>
+        <li class="nav-dropdown">
+          <button class="nav-link" aria-haspopup="true" aria-expanded="false">
+            Sectors
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 4l4 4 4-4"/></svg>
+          </button>
+          <div class="nav-dropdown-menu" role="menu">
+            <a class="nav-dropdown-item" href="/sectors/residential/" role="menuitem"><span class="nav-dropdown-icon">🏠</span>Residential</a>
+            <a class="nav-dropdown-item" href="/sectors/hotels/" role="menuitem"><span class="nav-dropdown-icon">🏨</span>Hotels &amp; Hospitality</a>
+            <a class="nav-dropdown-item" href="/sectors/schools/" role="menuitem"><span class="nav-dropdown-icon">🎓</span>Schools &amp; Education</a>
+            <a class="nav-dropdown-item" href="/sectors/healthcare/" role="menuitem"><span class="nav-dropdown-icon">🏥</span>Healthcare</a>
+            <a class="nav-dropdown-item" href="/sectors/developers/" role="menuitem"><span class="nav-dropdown-icon">🏗️</span>Developers</a>
+            <a class="nav-dropdown-item" href="/sectors/architects-designers/" role="menuitem"><span class="nav-dropdown-icon">📐</span>Architects &amp; Designers</a>
+          </div>
+        </li>
+        <li><a href="/projects/" class="nav-link">Projects</a></li>
+        <li><a href="/knowledge/" class="nav-link">Knowledge</a></li>
+        <li><a href="/trade/" class="nav-link">Trade</a></li>
+        <li><a href="/about/" class="nav-link">About</a></li>
+      </ul>
 
-<div class="mobile-nav" id="mobile-nav" role="dialog" aria-label="Mobile navigation">
-<a href="/solar-shading/">Solar Shading</a>
-<a href="/curtains/">Curtains</a>
-<a href="/blinds/">Blinds</a>
-<a href="/shutters/">Shutters</a>
-<a href="/sectors/">Sectors</a>
-<a href="/projects/">Projects</a>
-<a href="/knowledge/">Knowledge</a>
-<a href="/trade/">Trade</a>
-<a href="/about/">About</a>
-<a href="/contact/" class="btn btn--primary" style="margin-top:1rem">Book Consultation</a>
-</div>
+      <a href="tel:01323844555" class="nav-phone" aria-label="Call us on 01323 844555">01323 844555</a>
+      <a href="/contact/" class="nav-cta">Book Consultation</a>
 
-<main id="main">
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" id="nav-toggle">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
 
-<section class="home-hero">
-<div class="home-hero__inner">
-<div class="home-hero__media">
-<img src="/assets/images/hero-home.jpg" alt="Bespoke linen curtains in a light-filled Sussex drawing room" width="1440" height="900" fetchpriority="high">
-<div class="home-hero__overlay" aria-hidden="true"></div>
-</div>
-<div class="wrap home-hero__content">
-<span class="eyebrow" style="color:var(--sage-400)">Hailsham, East Sussex &middot; Est. 2002</span>
-<h1>Designed for how<br>we live in&nbsp;2026.</h1>
-<p class="lead" style="color:rgba(255,255,255,.82);max-width:46ch">Curtains, blinds, shutters and external solar shading for Sussex, Kent, Surrey and London. Specified to meet Part&nbsp;O overheating regulations. Installed by people who care more than they need&nbsp;to.</p>
-<div class="home-hero__actions">
-<a href="/contact/" class="btn btn--light">Book a Consultation</a>
-<a href="/solar-shading/" class="btn btn--ghost" style="color:var(--white)">Explore Solar Shading</a>
-</div>
-</div>
-</div>
-</section>
+  <!-- Mobile nav -->
+  <div class="nav-mobile" id="nav-mobile" aria-hidden="true">
+    <a href="/curtains/" class="nav-mobile-link">Curtains</a>
+    <a href="/blinds/" class="nav-mobile-link">Blinds</a>
+    <a href="/shutters/" class="nav-mobile-link">Shutters</a>
+    <a href="/solar-shading/" class="nav-mobile-link">Solar Shading</a>
+    <a href="/projects/" class="nav-mobile-link">Projects</a>
+    <a href="/sectors/" class="nav-mobile-link">Sectors</a>
+    <a href="/knowledge/" class="nav-mobile-link">Knowledge</a>
+    <a href="/trade/" class="nav-mobile-link">Trade</a>
+    <a href="/about/" class="nav-mobile-link">About</a>
+    <a href="/contact/" class="nav-mobile-link">Book a Consultation</a>
+    <div style="margin-top:var(--sp-8);padding-top:var(--sp-8);border-top:1px solid rgba(255,255,255,0.1)">
+      <a href="tel:01323844555" style="color:var(--sage-400);font-family:var(--font-mono);font-size:var(--text-lg);display:block;margin-bottom:var(--sp-3)">01323 844555</a>
+      <a href="mailto:callum@creativecurtains.uk.com" style="color:rgba(255,255,255,0.4);font-size:var(--text-sm)">callum@creativecurtains.uk.com</a>
+    </div>
+  </div>
 
-<section class="section home-pillars">
-<div class="wrap">
-<div class="home-pillars__header">
-<span class="eyebrow">What We Do</span>
-<h2>One specialist.<br>Four disciplines.</h2>
-<p class="lead">We design and install everything that goes at a window — from floor-to-ceiling linen curtains to externally-mounted solar screens that satisfy building regulations. Nothing is outsourced.</p>
-</div>
-<div class="home-pillars__grid">
-<a href="/curtains/" class="pillar-card">
-<div class="pillar-card__img"><img src="/assets/images/pillar-curtains.jpg" alt="Bespoke lined curtains" width="600" height="750" loading="lazy"></div>
-<div class="pillar-card__body">
-<span class="pillar-card__number">01</span>
-<h3>Curtains</h3>
-<p>Made-to-measure in natural linens, wools and velvets. Interlined, blackout and sheer options. Wave, pencil pleat and eyelet headings.</p>
-<span class="btn btn--ghost">View Curtains</span>
-</div>
-</a>
-<a href="/blinds/" class="pillar-card">
-<div class="pillar-card__img"><img src="/assets/images/pillar-blinds.jpg" alt="Roman blind in a contemporary kitchen" width="600" height="750" loading="lazy"></div>
-<div class="pillar-card__body">
-<span class="pillar-card__number">02</span>
-<h3>Blinds</h3>
-<p>Roman, roller, Venetian, cellular and motorised. Every fabric fire-rated where required. Blackout for bedrooms, solar-control for south-facing rooms.</p>
-<span class="btn btn--ghost">View Blinds</span>
-</div>
-</a>
-<a href="/shutters/" class="pillar-card">
-<div class="pillar-card__img"><img src="/assets/images/pillar-shutters.jpg" alt="Full-height painted timber shutters" width="600" height="750" loading="lazy"></div>
-<div class="pillar-card__body">
-<span class="pillar-card__number">03</span>
-<h3>Shutters</h3>
-<p>Solid timber and MDF shutters, painted to any RAL or Farrow &amp; Ball colour. Full-height, cafe-style and tracked bay window systems.</p>
-<span class="btn btn--ghost">View Shutters</span>
-</div>
-</a>
-<a href="/solar-shading/" class="pillar-card pillar-card--featured">
-<div class="pillar-card__img"><img src="/assets/images/pillar-solar-shading.jpg" alt="External solar screen on a south-facing glazed extension" width="600" height="750" loading="lazy"></div>
-<div class="pillar-card__body">
-<span class="pillar-card__number">04</span>
-<h3>External Solar Shading</h3>
-<p>Roller screens, louvre systems, awnings and motorised pergolas. The only category that counts toward Part&nbsp;O overheating compliance. Built for the UK's new climate reality.</p>
-<span class="tag" style="margin-bottom:var(--space-3)">Part O Compliant</span>
-<span class="btn btn--ghost">Explore Solar Shading</span>
-</div>
-</a>
-</div>
-</div>
-</section>
+  <main id="main">
 
-<section class="home-reg">
-<div class="wrap">
-<div class="home-reg__inner">
-<div class="home-reg__text">
-<span class="eyebrow" style="color:var(--sage-400)">The Regulatory Shift</span>
-<h2 style="color:var(--white)">Part O is law.<br>Internal blinds don't count.</h2>
-<p style="color:rgba(255,255,255,.72)">Since 15 June 2022, Part O of the Building Regulations has made overheating mitigation mandatory in new residential builds. Internal curtains, blinds and shutters do not satisfy the requirement. Only external solar shading does.</p>
-<p style="color:rgba(255,255,255,.72)">The Future Homes Standard, laid in March 2026 and in force from March 2027, tightens this further. If you are specifying, developing or retrofitting, external shading is no longer optional.</p>
-<div style="display:flex;gap:var(--space-4);flex-wrap:wrap;margin-top:var(--space-6)">
-<a href="/knowledge/part-o-guide/" class="btn btn--light">Read the Part O Guide</a>
-<a href="/solar-shading/" class="btn btn--ghost" style="color:var(--white)">External Solar Shading</a>
-</div>
-</div>
-<div class="home-reg__aside">
-<div class="reg-card">
-<div><span class="stat-number" style="color:var(--sage-400)">2022</span><br><span class="stat-label">Part O in force</span></div>
-<hr style="border:none;border-top:1px solid rgba(255,255,255,.1)">
-<div><span class="stat-number" style="color:var(--sage-400)">2027</span><br><span class="stat-label">Future Homes Standard</span></div>
-<hr style="border:none;border-top:1px solid rgba(255,255,255,.1)">
-<div><span class="stat-number" style="color:var(--sage-400)">0</span><br><span class="stat-label">Internal products that comply</span></div>
-</div>
-</div>
-</div>
-</div>
-</section>
+    <!-- ── Hero ── -->
+    <section class="hero" aria-label="Hero">
+      <div class="hero-bg">
+        <div class="hero-placeholder">
+          <div class="hero-placeholder-grid"></div>
+          <span class="hero-placeholder-label">Hero image — full-bleed interior photography</span>
+        </div>
+        <div class="hero-bg-gradient"></div>
+      </div>
 
-<div class="stat-strip">
-<div class="wrap">
-<div class="stat-row">
-<div class="stat-item"><div class="stat-number">22+</div><div class="stat-label">Years installing across the South East</div></div>
-<div class="stat-item"><div class="stat-number">4</div><div class="stat-label">Disciplines under one roof</div></div>
-<div class="stat-item"><div class="stat-number">7</div><div class="stat-label">UK installers of MicroLouvre&reg;</div></div>
-<div class="stat-item"><div class="stat-number">3</div><div class="stat-label">Sectors: residential, hospitality, education</div></div>
-</div>
-</div>
-</div>
+      <div class="hero-inner wrap">
+        <div class="hero-eyebrow">
+          <span class="hero-eyebrow-line"></span>
+          <span class="hero-eyebrow-text">Est. 2002 — Sussex, Kent, Surrey &amp; London</span>
+        </div>
 
-<section class="section home-sectors">
-<div class="wrap">
-<span class="eyebrow">Who We Work With</span>
-<h2>Residential, hospitality<br>and commercial.</h2>
-<p class="lead" style="margin-bottom:var(--space-12)">Three very different briefs. One team that knows all of them.</p>
-<div class="sectors-grid">
-<a href="/sectors/residential/" class="sector-card">
-<div class="sector-card__img"><img src="/assets/images/sector-residential.jpg" alt="Sussex farmhouse interior" width="800" height="500" loading="lazy"></div>
-<div class="sector-card__body">
-<h3>Residential</h3>
-<p>Homes in Sussex, Surrey, Kent and London. From a single bedroom to whole-house specification. We visit, measure, advise and install.</p>
-<span class="btn btn--ghost">Residential Projects</span>
-</div>
-</a>
-<a href="/sectors/hotels/" class="sector-card">
-<div class="sector-card__img"><img src="/assets/images/sector-hospitality.jpg" alt="Motorised blackout blinds in a hotel bedroom" width="800" height="500" loading="lazy"></div>
-<div class="sector-card__body">
-<h3>Hotels &amp; Hospitality</h3>
-<p>Bedroom blackout, restaurant ambience, spa privacy. Contract-grade fabrics, motorisation as standard, and installation around your occupancy.</p>
-<span class="btn btn--ghost">Hospitality Projects</span>
-</div>
-</a>
-<a href="/sectors/schools/" class="sector-card">
-<div class="sector-card__img"><img src="/assets/images/sector-schools.jpg" alt="External solar screens on a school building" width="800" height="500" loading="lazy"></div>
-<div class="sector-card__body">
-<h3>Independent Schools</h3>
-<p>Classroom overheating solved with external shading. Blackout for AV rooms. Historic buildings treated with care. BB93 acoustic compliance.</p>
-<span class="btn btn--ghost">Education Projects</span>
-</div>
-</a>
-</div>
-<div class="sectors-more" style="margin-top:var(--space-10)">
-<a href="/sectors/" style="font-size:var(--text-sm);font-weight:500;color:var(--colour-quiet);border-bottom:1px solid currentColor">View all sectors including healthcare, offices and developers &rarr;</a>
-</div>
-</div>
-</section>
+        <h1 class="hero-headline">
+          Designed for how we live <em>in 2026.</em>
+        </h1>
 
-<section class="section home-process" style="background:var(--white)">
-<div class="wrap">
-<span class="eyebrow">How We Work</span>
-<h2 style="margin-bottom:var(--space-16)">From first contact<br>to finished room.</h2>
-<ol class="process-steps" role="list">
-<li class="process-step">
-<span class="process-step__num">01</span>
-<div><h4>Consultation</h4><p>We visit your property or meet at our Hailsham showroom. We talk through the brief — light control, thermal performance, aesthetics, regulation — and recommend accordingly. No hard sell.</p></div>
-</li>
-<li class="process-step">
-<span class="process-step__num">02</span>
-<div><h4>Design &amp; Specification</h4><p>We produce a written specification with fabric samples, product datasheets and, where relevant, TM59 or BREEAM performance data. Architects and designers receive drawings in the format they need.</p></div>
-</li>
-<li class="process-step">
-<span class="process-step__num">03</span>
-<div><h4>Manufacture &amp; Supply</h4><p>Everything is made to measure. Curtains and blinds made in the UK. External shading systems from European manufacturers with full CE and UKCA certification where required.</p></div>
-</li>
-<li class="process-step">
-<span class="process-step__num">04</span>
-<div><h4>Installation &amp; Handover</h4><p>Our own fitters, not subcontractors. We dress the room, test every motorised component and hand over a written care guide. Snagging is handled by the same person who did the install.</p></div>
-</li>
-</ol>
-</div>
-</section>
+        <p class="hero-sub">
+          Curtains, blinds, shutters and external solar shading — crafted to measure for homes, hotels and schools.
+        </p>
 
-<section class="section home-projects">
-<div class="wrap">
-<div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:var(--space-12);flex-wrap:wrap;gap:var(--space-4)">
-<div><span class="eyebrow">Recent Work</span><h2>Projects.</h2></div>
-<a href="/projects/" class="btn btn--ghost">View all projects</a>
-</div>
-<div class="projects-grid">
-<a href="/projects/sussex-barn-solar-shading/" class="project-thumb">
-<div class="project-thumb__img"><img src="/assets/images/project-01.jpg" alt="External roller screens on a Sussex barn conversion" width="700" height="500" loading="lazy"></div>
-<div><span class="tag">External Shading</span><h3>Sussex Barn Conversion</h3><p>External roller screens to a south-facing glazed link. Part&nbsp;O compliant. Motorised with solar sensor.</p></div>
-</a>
-<a href="/projects/surrey-manor-curtains/" class="project-thumb">
-<div class="project-thumb__img"><img src="/assets/images/project-02.jpg" alt="Full-height interlined curtains in a Surrey manor house" width="700" height="500" loading="lazy"></div>
-<div><span class="tag">Curtains</span><h3>Surrey Manor House</h3><p>Floor-to-ceiling interlined curtains throughout a Grade II listed manor. Twelve rooms, sixty-four drops.</p></div>
-</a>
-<a href="/projects/brighton-hotel-blackout/" class="project-thumb">
-<div class="project-thumb__img"><img src="/assets/images/project-03.jpg" alt="Motorised blackout roller blinds in a Brighton hotel" width="700" height="500" loading="lazy"></div>
-<div><span class="tag">Hospitality</span><h3>Brighton Boutique Hotel</h3><p>Motorised blackout roller blinds across forty-two bedrooms. Contract-grade fabric, two-year guarantee.</p></div>
-</a>
-</div>
-</div>
-</section>
+        <div class="hero-actions">
+          <a href="/contact/" class="btn btn--sage btn--lg">Book a Consultation</a>
+          <a href="/projects/" class="btn btn--outline-light btn--lg">View Projects</a>
+        </div>
+      </div>
 
-<section class="section" style="background:var(--white)">
-<div class="wrap wrap--sm">
-<div class="pull-quote text-center" style="border-left:none;padding-left:0;border-top:3px solid var(--sage-400);padding-top:var(--space-10)">
-<blockquote>"The specification was more thorough than anything we received from a London practice. They knew the Part&nbsp;O regulations better than our architect did, and the installation was entirely without drama."</blockquote>
-<cite>Interior Designer, BIID member &mdash; East Sussex project, 2024</cite>
-</div>
-</div>
-</section>
+      <div class="hero-scroll" aria-hidden="true">
+        <span class="hero-scroll-line"></span>
+        <span>Scroll</span>
+      </div>
+    </section>
 
-<section class="section" style="background:var(--sage-100)">
-<div class="wrap">
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-20);align-items:start">
-<div style="display:flex;flex-direction:column;gap:var(--space-6)">
-<span class="eyebrow">Knowledge Hub</span>
-<h2>Understand before<br>you specify.</h2>
-<p>We publish practical guides on Part O compliance, solar heat gain, fabric performance and motorisation for architects, designers and informed homeowners. No marketing language.</p>
-<a href="/knowledge/" class="btn btn--primary">Browse the Knowledge Hub</a>
-</div>
-<div style="display:flex;flex-direction:column;gap:var(--space-5)">
-<a href="/knowledge/part-o-guide/" style="background:var(--white);border-radius:var(--radius);padding:var(--space-6);display:flex;flex-direction:column;gap:var(--space-3);box-shadow:var(--shadow-sm);text-decoration:none;color:inherit">
-<span class="tag">Regulation</span>
-<h4>The Complete Guide to Part O</h4>
-<p style="font-size:var(--text-sm)">What it requires, who it applies to, and how external shading satisfies the overheating standard.</p>
-</a>
-<a href="/knowledge/solar-heat-gain/" style="background:var(--white);border-radius:var(--radius);padding:var(--space-6);display:flex;flex-direction:column;gap:var(--space-3);box-shadow:var(--shadow-sm);text-decoration:none;color:inherit">
-<span class="tag">Technical</span>
-<h4>Solar Heat Gain &amp; Shading Coefficients</h4>
-<p style="font-size:var(--text-sm)">How to read g-values, SHGC ratings and what they mean when choosing a product.</p>
-</a>
-<a href="/knowledge/motorisation-guide/" style="background:var(--white);border-radius:var(--radius);padding:var(--space-6);display:flex;flex-direction:column;gap:var(--space-3);box-shadow:var(--shadow-sm);text-decoration:none;color:inherit">
-<span class="tag">Guide</span>
-<h4>Motorisation: What You Need to Know</h4>
-<p style="font-size:var(--text-sm)">Somfy vs Lutron, hardwired vs battery, smart home integration and reliability over time.</p>
-</a>
-</div>
-</div>
-</div>
-</section>
+    <!-- ── Ticker ── -->
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-track">
+        <span class="ticker-item"><span class="ticker-dot"></span>Bespoke Curtains</span>
+        <span class="ticker-item"><span class="ticker-dot"></span>Roller &amp; Roman Blinds</span>
+        <span class="ticker-item"><span class="ticker-dot"></span>Plantation Shutters</span>
+        <span class="ticker-item"><span class="ticker-dot"></span>External Solar Shading</span>
+        <span class="ticker-item"><span class="ticker-dot"></span>Part O Compliance</span>
+        <span class="ticker-item"><span class="ticker-dot"></span>MicroLouvre® Installer</span>
+        <span class="ticker-item"><span class="ticker-dot"></span>Motorisation &amp; Smart Control</span>
+        <span class="ticker-item"><span class="ticker-dot"></span>Commercial &amp; Residential</span>
+        <span class="ticker-item"><span class="ticker-dot"></span>TM59 Compliant</span>
+        <span class="ticker-item"><span class="ticker-dot"></span>22+ Years Experience</span>
+        <!-- duplicate for seamless loop -->
+        <span class="ticker-item"><span class="ticker-dot"></span>Bespoke Curtains</span>
+        <span class="ticker-item"><span class="ticker-dot"></span>Roller &amp; Roman Blinds</span>
+        <span class="ticker-item"><span class="ticker-dot"></span>Plantation Shutters</span>
+        <span class="ticker-item"><span class="ticker-dot"></span>External Solar Shading</span>
+        <span class="ticker-item"><span class="ticker-dot"></span>Part O Compliance</span>
+        <span class="ticker-item"><span class="ticker-dot"></span>MicroLouvre® Installer</span>
+        <span class="ticker-item"><span class="ticker-dot"></span>Motorisation &amp; Smart Control</span>
+        <span class="ticker-item"><span class="ticker-dot"></span>Commercial &amp; Residential</span>
+        <span class="ticker-item"><span class="ticker-dot"></span>TM59 Compliant</span>
+        <span class="ticker-item"><span class="ticker-dot"></span>22+ Years Experience</span>
+      </div>
+    </div>
 
-<section style="background:var(--colour-ink);color:var(--white);padding:clamp(var(--space-16),8vw,var(--space-40)) 0">
-<div class="wrap">
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-16);align-items:center">
-<div style="display:flex;flex-direction:column;gap:var(--space-5)">
-<span class="eyebrow" style="color:var(--sage-400)">Visit Us</span>
-<h2 style="color:var(--white)">Hailsham Showroom,<br>East Sussex.</h2>
-<p style="color:rgba(255,255,255,.72)">9 North Street, Hailsham, BN27 1DQ. Monday to Friday 9&ndash;5:30, Saturday 9&ndash;4. Working motorisation demonstrations and the full external shading range on display.</p>
-<div style="display:flex;gap:var(--space-4);flex-wrap:wrap;margin-top:var(--space-4)">
-<a href="/contact/" class="btn btn--light">Book a Visit</a>
-<a href="/showroom/" class="btn btn--outline" style="color:var(--white);border-color:rgba(255,255,255,.4)">Showroom Details</a>
-</div>
-</div>
-<div style="border-radius:var(--radius);overflow:hidden">
-<img src="/assets/images/showroom-exterior.jpg" alt="Creative Curtains &amp; Blinds showroom, 9 North Street, Hailsham" width="600" height="450" loading="lazy" style="width:100%;height:100%;object-fit:cover">
-</div>
-</div>
-</div>
-</section>
+    <!-- ── Four Product Pillars ── -->
+    <section class="pillars" aria-label="Our products">
+      <a href="/curtains/" class="pillar">
+        <div class="pillar-bg">
+          <div class="pillar-placeholder"><span class="pillar-placeholder-label">Curtains — hero photography</span></div>
+          <div class="pillar-bg-overlay"></div>
+        </div>
+        <div class="pillar-content">
+          <span class="pillar-number">01</span>
+          <h2 class="pillar-title">Curtains</h2>
+          <p class="pillar-desc">Made-to-measure in any fabric, heading and lining. Track, pole or bay — we handle every window.</p>
+          <span class="pillar-cta">Explore →</span>
+        </div>
+      </a>
 
-</main>
+      <a href="/blinds/" class="pillar">
+        <div class="pillar-bg">
+          <div class="pillar-placeholder"><span class="pillar-placeholder-label">Blinds — hero photography</span></div>
+          <div class="pillar-bg-overlay"></div>
+        </div>
+        <div class="pillar-content">
+          <span class="pillar-number">02</span>
+          <h2 class="pillar-title">Blinds</h2>
+          <p class="pillar-desc">Roller, Roman, Venetian, Duette, Silhouette and more. Blackout to sheer, manual to motorised.</p>
+          <span class="pillar-cta">Explore →</span>
+        </div>
+      </a>
 
-<footer class="site-footer">
-<div class="wrap">
-<div class="footer-grid">
-<div class="footer-brand">
-<img src="/assets/images/logo.png" alt="Creative Curtains &amp; Blinds" width="120" height="40">
-<p>Curtains, blinds, shutters and external solar shading for Sussex, Kent, Surrey and London. Specified to meet Part O overheating regulations.</p>
-<p style="margin-top:var(--space-4)">9 North Street, Hailsham, BN27 1DQ<br><a href="tel:01323844555" style="color:rgba(255,255,255,.6)">01323 844555</a><br><a href="mailto:callum@creativecurtains.uk.com" style="color:rgba(255,255,255,.6)">callum@creativecurtains.uk.com</a></p>
-</div>
-<div class="footer-col">
-<h5>Products</h5>
-<ul>
-<li><a href="/curtains/">Curtains</a></li>
-<li><a href="/blinds/">Blinds</a></li>
-<li><a href="/shutters/">Shutters</a></li>
-<li><a href="/solar-shading/">External Solar Shading</a></li>
-<li><a href="/solar-shading/microlouvre/">MicroLouvre&reg;</a></li>
-</ul>
-</div>
-<div class="footer-col">
-<h5>Sectors</h5>
-<ul>
-<li><a href="/sectors/residential/">Residential</a></li>
-<li><a href="/sectors/architects-designers/">Architects &amp; Designers</a></li>
-<li><a href="/sectors/hotels/">Hotels</a></li>
-<li><a href="/sectors/schools/">Independent Schools</a></li>
-<li><a href="/sectors/healthcare/">Healthcare</a></li>
-<li><a href="/sectors/offices/">Commercial Offices</a></li>
-<li><a href="/sectors/developers/">Developers</a></li>
-</ul>
-</div>
-<div class="footer-col">
-<h5>Company</h5>
-<ul>
-<li><a href="/projects/">Projects</a></li>
-<li><a href="/knowledge/">Knowledge Hub</a></li>
-<li><a href="/trade/">Trade Portal</a></li>
-<li><a href="/about/">About</a></li>
-<li><a href="/showroom/">Showroom</a></li>
-<li><a href="/areas/">Areas We Cover</a></li>
-<li><a href="/journal/">Journal</a></li>
-<li><a href="/contact/">Contact</a></li>
-</ul>
-</div>
-</div>
-<div class="footer-bottom">
-<p>&copy; 2026 Creative Curtains &amp; Blinds. All rights reserved.</p>
-<nav class="footer-legal"><a href="/privacy/">Privacy Policy</a><a href="/accessibility/">Accessibility</a></nav>
-</div>
-</div>
-</footer>
+      <a href="/shutters/" class="pillar">
+        <div class="pillar-bg">
+          <div class="pillar-placeholder"><span class="pillar-placeholder-label">Shutters — hero photography</span></div>
+          <div class="pillar-bg-overlay"></div>
+        </div>
+        <div class="pillar-content">
+          <span class="pillar-number">03</span>
+          <h2 class="pillar-title">Shutters</h2>
+          <p class="pillar-desc">Full-height, tier-on-tier, solid and tracked. Painted to any colour. Motorisation available.</p>
+          <span class="pillar-cta">Explore →</span>
+        </div>
+      </a>
 
-<div class="cookie-banner" id="cookie-banner" role="region" aria-label="Cookie consent">
-<p>We use essential cookies only. No tracking, no advertising. <a href="/privacy/">Read our privacy policy.</a></p>
-<div class="cookie-actions">
-<button class="btn btn--light" id="cookie-accept" style="padding:var(--space-3) var(--space-6)">Accept</button>
-</div>
-</div>
+      <a href="/solar-shading/" class="pillar">
+        <div class="pillar-bg">
+          <div class="pillar-placeholder"><span class="pillar-placeholder-label">Solar Shading — external installation photography</span></div>
+          <div class="pillar-bg-overlay"></div>
+        </div>
+        <div class="pillar-content">
+          <span class="pillar-number">04</span>
+          <h2 class="pillar-title">Solar Shading</h2>
+          <p class="pillar-desc">External roller screens, louvres, awnings and MicroLouvre® panels. The only external solution that satisfies Part O.</p>
+          <span class="pillar-cta">Explore →</span>
+        </div>
+      </a>
+    </section>
+    <!-- ── Stats ── -->
+    <section class="section section--dark" aria-label="Key statistics">
+      <div class="wrap">
+        <div class="stats-strip stats-strip--dark" data-reveal>
+          <div class="stat-item">
+            <div class="stat-number">22+</div>
+            <div class="stat-label">Years installing</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">4</div>
+            <div class="stat-label">Disciplines under one roof</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">7</div>
+            <div class="stat-label">UK MicroLouvre® installers</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">2022</div>
+            <div class="stat-label">Part O in force</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">0</div>
+            <div class="stat-label">Internal products that comply</div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<script>
-const toggle = document.querySelector('.nav-toggle');
-const mobileNav = document.querySelector('.mobile-nav');
-if (toggle) toggle.addEventListener('click', () => {
-const open = mobileNav.classList.toggle('is-open');
-toggle.setAttribute('aria-expanded', open);
-});
-document.querySelectorAll('.nav-dropdown-toggle').forEach(btn => {
-btn.addEventListener('click', () => btn.setAttribute('aria-expanded', btn.getAttribute('aria-expanded') !== 'true'));
-});
-const banner = document.getElementById('cookie-banner');
-const acceptBtn = document.getElementById('cookie-accept');
-if (localStorage.getItem('cc_cookies')) banner.hidden = true;
-if (acceptBtn) acceptBtn.addEventListener('click', () => { localStorage.setItem('cc_cookies','1'); banner.hidden = true; });
-</script>
+    <!-- ── Part O Feature ── -->
+    <section class="feature-split" aria-label="Part O compliance">
+      <div class="feature-split-media">
+        <div class="img-placeholder">
+          <span class="img-placeholder-icon">☀️</span>
+          <span>External solar shading installation — preferably a project photo showing louvres or roller screens</span>
+        </div>
+      </div>
+      <div class="feature-split-content">
+        <p class="overline" data-reveal>The regulatory shift</p>
+        <h2 data-reveal data-reveal-delay="1">Part O is law.<br><em style="font-style:italic;color:var(--sage-400)">Internal blinds don't count.</em></h2>
+        <p data-reveal data-reveal-delay="2">Since 15 June 2022, Part O of the Building Regulations has made overheating mitigation mandatory in all new residential builds. Internal curtains, blinds and shutters do not satisfy the requirement. Only external solar shading does.</p>
+        <p data-reveal data-reveal-delay="3" style="margin-top:var(--sp-4)">The Future Homes Standard, laid in March 2026 and in force from March 2027, tightens this further. External shading is no longer optional.</p>
+        <div style="display:flex;gap:var(--sp-4);flex-wrap:wrap;margin-top:var(--sp-8)" data-reveal data-reveal-delay="4">
+          <a href="/knowledge/part-o-guide/" class="btn btn--outline-light">Read the Part O Guide</a>
+          <a href="/solar-shading/" class="btn btn--sage">External Solar Shading</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Featured Projects ── -->
+    <section class="section" aria-label="Featured projects">
+      <div class="wrap">
+        <div class="section-header" style="display:flex;align-items:flex-end;justify-content:space-between;gap:var(--sp-6)">
+          <div>
+            <span class="overline" data-reveal>Selected work</span>
+            <h2 data-reveal data-reveal-delay="1">Projects that speak<br>for themselves.</h2>
+          </div>
+          <a href="/projects/" class="link-arrow" data-reveal data-reveal-delay="2" style="flex-shrink:0">View all projects</a>
+        </div>
+
+        <div class="projects-grid">
+          <a href="/projects/surrey-glazed-extension/" class="project-card project-card--featured">
+            <div class="project-card-bg">
+              <div class="img-placeholder" style="min-height:100%;border-radius:0">
+                <span class="img-placeholder-icon">🏠</span>
+                <span>Surrey Glazed Extension — MicroLouvre® install photo</span>
+              </div>
+            </div>
+            <div class="project-card-overlay"></div>
+            <div class="project-card-content">
+              <span class="project-card-tag">Solar Shading · Surrey</span>
+              <h3 class="project-card-title">Surrey Glazed Extension — MicroLouvre® screening</h3>
+            </div>
+            <div class="project-card-arrow">→</div>
+          </a>
+
+          <a href="/projects/brighton-hotel-blackout/" class="project-card">
+            <div class="project-card-bg">
+              <div class="img-placeholder" style="min-height:100%;border-radius:0">
+                <span class="img-placeholder-icon">🏨</span>
+                <span>Brighton Hotel — blackout cassette blinds</span>
+              </div>
+            </div>
+            <div class="project-card-overlay"></div>
+            <div class="project-card-content">
+              <span class="project-card-tag">Commercial · Brighton</span>
+              <h3 class="project-card-title">86-room seafront hotel</h3>
+            </div>
+            <div class="project-card-arrow">→</div>
+          </a>
+
+          <a href="/projects/surrey-manor-curtains/" class="project-card">
+            <div class="project-card-bg">
+              <div class="img-placeholder" style="min-height:100%;border-radius:0">
+                <span class="img-placeholder-icon">🏰</span>
+                <span>Surrey Manor — curtains &amp; blinds</span>
+              </div>
+            </div>
+            <div class="project-card-overlay"></div>
+            <div class="project-card-content">
+              <span class="project-card-tag">Residential · Surrey</span>
+              <h3 class="project-card-title">Grade II listed manor house</h3>
+            </div>
+            <div class="project-card-arrow">→</div>
+          </a>
+
+          <a href="/projects/kent-school-shading/" class="project-card">
+            <div class="project-card-bg">
+              <div class="img-placeholder" style="min-height:100%;border-radius:0">
+                <span class="img-placeholder-icon">🎓</span>
+                <span>Kent School — external roller screens</span>
+              </div>
+            </div>
+            <div class="project-card-overlay"></div>
+            <div class="project-card-content">
+              <span class="project-card-tag">Education · Kent</span>
+              <h3 class="project-card-title">BREEAM Excellent school</h3>
+            </div>
+            <div class="project-card-arrow">→</div>
+          </a>
+
+          <a href="/projects/london-apartment-shutters/" class="project-card">
+            <div class="project-card-bg">
+              <div class="img-placeholder" style="min-height:100%;border-radius:0">
+                <span class="img-placeholder-icon">🏙️</span>
+                <span>London Apartment — plantation shutters</span>
+              </div>
+            </div>
+            <div class="project-card-overlay"></div>
+            <div class="project-card-content">
+              <span class="project-card-tag">Residential · Kensington</span>
+              <h3 class="project-card-title">Victorian mansion block</h3>
+            </div>
+            <div class="project-card-arrow">→</div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Sectors ── -->
+    <section class="section section--paper" aria-label="Sectors we serve">
+      <div class="wrap">
+        <div class="section-header--center" data-reveal>
+          <span class="overline">Who we work with</span>
+          <h2>Residential, hospitality<br>and commercial.</h2>
+          <p>Three very different briefs. One team that knows all of them.</p>
+        </div>
+
+        <div class="sector-strip">
+          <a href="/sectors/residential/" class="sector-tile" data-reveal data-reveal-delay="1">
+            <span class="sector-tile-icon">🏠</span>
+            <span class="sector-tile-name">Residential</span>
+          </a>
+          <a href="/sectors/hotels/" class="sector-tile" data-reveal data-reveal-delay="2">
+            <span class="sector-tile-icon">🏨</span>
+            <span class="sector-tile-name">Hotels</span>
+          </a>
+          <a href="/sectors/schools/" class="sector-tile" data-reveal data-reveal-delay="3">
+            <span class="sector-tile-icon">🎓</span>
+            <span class="sector-tile-name">Schools</span>
+          </a>
+          <a href="/sectors/healthcare/" class="sector-tile" data-reveal data-reveal-delay="4">
+            <span class="sector-tile-icon">🏥</span>
+            <span class="sector-tile-name">Healthcare</span>
+          </a>
+          <a href="/sectors/developers/" class="sector-tile" data-reveal data-reveal-delay="5">
+            <span class="sector-tile-icon">🏗️</span>
+            <span class="sector-tile-name">Developers</span>
+          </a>
+          <a href="/sectors/architects-designers/" class="sector-tile" data-reveal data-reveal-delay="6">
+            <span class="sector-tile-icon">📐</span>
+            <span class="sector-tile-name">Architects &amp; Designers</span>
+          </a>
+          <a href="/sectors/offices/" class="sector-tile" data-reveal data-reveal-delay="6">
+            <span class="sector-tile-icon">🏢</span>
+            <span class="sector-tile-name">Offices</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Testimonial ── -->
+    <section class="testimonial-section" aria-label="Client testimonial">
+      <div class="wrap">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-16);align-items:center">
+          <div data-reveal>
+            <blockquote class="testimonial-quote">
+              Every detail was handled without us having to ask twice. The result is exactly what we imagined — and then some.
+            </blockquote>
+            <div class="testimonial-attr">
+              <div class="testimonial-avatar">S</div>
+              <div>
+                <div class="testimonial-name">Sarah M.</div>
+                <div class="testimonial-role">Residential client, Tunbridge Wells</div>
+              </div>
+            </div>
+          </div>
+          <div data-reveal data-reveal="right">
+            <div class="img-placeholder" style="aspect-ratio:4/3;border-radius:var(--radius-md)">
+              <span class="img-placeholder-icon">🏡</span>
+              <span>Client home — living room curtains &amp; blinds photography</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Knowledge Hub ── -->
+    <section class="section" aria-label="Knowledge hub">
+      <div class="wrap">
+        <div class="section-header--center" data-reveal>
+          <span class="overline">Free resources</span>
+          <h2>Know before you specify.</h2>
+          <p>Technical guides for architects, designers, developers and discerning homeowners.</p>
+        </div>
+
+        <div class="knowledge-grid">
+          <a href="/knowledge/part-o-guide/" class="knowledge-card" data-reveal data-reveal-delay="1">
+            <div class="knowledge-card-icon">📋</div>
+            <h3>The Complete Part O Guide</h3>
+            <p>What the regulations require, what products qualify, and how to specify compliantly for any project type.</p>
+            <span class="link-arrow">Read guide</span>
+          </a>
+
+          <a href="/knowledge/solar-heat-gain/" class="knowledge-card" data-reveal data-reveal-delay="2">
+            <div class="knowledge-card-icon">🌡️</div>
+            <h3>Understanding Solar Heat Gain</h3>
+            <p>G-values, shading coefficients and why the position of your blind matters more than its fabric.</p>
+            <span class="link-arrow">Read guide</span>
+          </a>
+
+          <a href="/knowledge/motorisation-guide/" class="knowledge-card" data-reveal data-reveal-delay="3">
+            <div class="knowledge-card-icon">⚙️</div>
+            <h3>Motorisation Guide</h3>
+            <p>From wall switches to BMS integration — how to specify the right motor system for any project.</p>
+            <span class="link-arrow">Read guide</span>
+          </a>
+
+          <a href="/knowledge/external-vs-internal/" class="knowledge-card" data-reveal data-reveal-delay="4">
+            <div class="knowledge-card-icon">🔬</div>
+            <h3>External vs Internal Shading</h3>
+            <p>A side-by-side comparison of performance, aesthetics and cost for every application.</p>
+            <span class="link-arrow">Read guide</span>
+          </a>
+
+          <a href="/knowledge/fabric-performance/" class="knowledge-card" data-reveal data-reveal-delay="5">
+            <div class="knowledge-card-icon">🧵</div>
+            <h3>Fabric Performance Guide</h3>
+            <p>Openness factor, Tv, g-value and colour — decoded for specifiers and homeowners alike.</p>
+            <span class="link-arrow">Read guide</span>
+          </a>
+
+          <a href="/knowledge/blackout-guide/" class="knowledge-card" data-reveal data-reveal-delay="6">
+            <div class="knowledge-card-icon">🌙</div>
+            <h3>Blackout Guide</h3>
+            <p>EN 13120 Class 3 explained. Which products achieve true blackout and how to eliminate edge gaps.</p>
+            <span class="link-arrow">Read guide</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CTA ── -->
+    <section class="cta-band" aria-label="Book a consultation">
+      <div class="wrap" style="position:relative;z-index:1">
+        <p class="overline" style="color:var(--sage-400);margin-bottom:var(--sp-4)" data-reveal>Get started</p>
+        <h2 data-reveal data-reveal-delay="1">Ready to transform your space?</h2>
+        <p data-reveal data-reveal-delay="2">We visit, measure, advise and install. No obligation consultation, no sales pressure.</p>
+        <div class="cta-band-actions" data-reveal data-reveal-delay="3">
+          <a href="/contact/" class="btn btn--sage btn--lg">Book a Consultation</a>
+          <a href="/showroom/" class="btn btn--outline-light btn--lg">Visit Our Showroom</a>
+        </div>
+        <p style="margin-top:var(--sp-8);color:rgba(255,255,255,0.3);font-family:var(--font-mono);font-size:var(--text-xs);letter-spacing:0.1em" data-reveal data-reveal-delay="4">
+          9 North Street, Hailsham BN27 1DQ &nbsp;·&nbsp; 01323 844555 &nbsp;·&nbsp; callum@creativecurtains.uk.com
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── Footer ── -->
+  <footer class="site-footer" aria-label="Site footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div style="font-family:var(--font-serif);font-size:var(--text-lg);color:var(--white);font-weight:500">Creative Curtains &amp; Blinds</div>
+          <p>Bespoke window treatments and external solar shading for residential and commercial projects. Designed for how we live in 2026.</p>
+          <div style="margin-top:var(--sp-6);display:flex;gap:var(--sp-3)">
+            <span class="footer-badge">Est. 2002</span>
+            <span class="footer-badge">Part O</span>
+            <span class="footer-badge">MicroLouvre®</span>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="footer-heading">Products</h3>
+          <ul class="footer-links">
+            <li><a href="/curtains/" class="footer-link">Curtains</a></li>
+            <li><a href="/blinds/" class="footer-link">Blinds</a></li>
+            <li><a href="/shutters/" class="footer-link">Shutters</a></li>
+            <li><a href="/solar-shading/" class="footer-link">Solar Shading</a></li>
+            <li><a href="/solar-shading/microlouvre/" class="footer-link">MicroLouvre®</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="footer-heading">Company</h3>
+          <ul class="footer-links">
+            <li><a href="/about/" class="footer-link">About Us</a></li>
+            <li><a href="/projects/" class="footer-link">Projects</a></li>
+            <li><a href="/sectors/" class="footer-link">Sectors</a></li>
+            <li><a href="/knowledge/" class="footer-link">Knowledge Hub</a></li>
+            <li><a href="/trade/" class="footer-link">Trade Portal</a></li>
+            <li><a href="/showroom/" class="footer-link">Showroom</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="footer-heading">Contact</h3>
+          <div class="footer-contact-item">
+            <span class="footer-contact-icon">📍</span>
+            <address style="font-style:normal">9 North Street<br>Hailsham, BN27 1DQ<br>East Sussex</address>
+          </div>
+          <div class="footer-contact-item">
+            <span class="footer-contact-icon">📞</span>
+            <a href="tel:01323844555">01323 844555</a>
+          </div>
+          <div class="footer-contact-item">
+            <span class="footer-contact-icon">✉️</span>
+            <a href="mailto:callum@creativecurtains.uk.com">callum@creativecurtains.uk.com</a>
+          </div>
+          <div style="margin-top:var(--sp-6)">
+            <a href="/areas/" class="footer-link" style="font-size:var(--text-xs);letter-spacing:0.06em;text-transform:uppercase">Areas we cover →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-legal">
+          &copy; 2026 Creative Curtains and Blinds Ltd. &nbsp;·&nbsp;
+          <a href="/privacy/">Privacy Policy</a> &nbsp;·&nbsp;
+          <a href="/accessibility/">Accessibility</a>
+        </p>
+        <div class="footer-accreditations">
+          <span class="footer-badge">BBSA Member</span>
+          <span class="footer-badge">Somfy Partner</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ── Scripts ── -->
+  <script>
+    // Nav scroll behaviour
+    const nav = document.getElementById('site-nav');
+    const onScroll = () => {
+      if (window.scrollY > 60) {
+        nav.classList.remove('is-transparent');
+        nav.classList.add('is-scrolled');
+      } else {
+        nav.classList.add('is-transparent');
+        nav.classList.remove('is-scrolled');
+      }
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    // Mobile toggle
+    const toggle = document.getElementById('nav-toggle');
+    const mobileNav = document.getElementById('nav-mobile');
+    toggle.addEventListener('click', () => {
+      const open = toggle.classList.toggle('is-open');
+      mobileNav.classList.toggle('is-open', open);
+      toggle.setAttribute('aria-expanded', open);
+      mobileNav.setAttribute('aria-hidden', !open);
+      document.body.style.overflow = open ? 'hidden' : '';
+    });
+
+    // Scroll reveal
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('[data-reveal]').forEach(el => revealObserver.observe(el));
+
+    // Stats counter animation
+    const countObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.querySelectorAll('.stat-number').forEach(el => {
+          const target = parseFloat(el.textContent.replace(/[^0-9.]/g, ''));
+          if (isNaN(target) || target === 0) return;
+          const suffix = el.textContent.replace(/[0-9.]/g, '');
+          let start = 0;
+          const dur = 1400;
+          const step = (ts) => {
+            if (!start) start = ts;
+            const prog = Math.min((ts - start) / dur, 1);
+            const ease = 1 - Math.pow(1 - prog, 3);
+            el.textContent = Math.round(ease * target) + suffix;
+            if (prog < 1) requestAnimationFrame(step);
+          };
+          requestAnimationFrame(step);
+        });
+        countObserver.unobserve(entry.target);
+      });
+    }, { threshold: 0.5 });
+
+    document.querySelectorAll('.stats-strip').forEach(el => countObserver.observe(el));
+  </script>
+
 </body>
 </html>
