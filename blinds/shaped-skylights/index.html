@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shaped, Skylight & Roof Blinds | Creative Curtains & Blinds</title>
+  <meta name="description" content="Made-to-measure blinds for shaped windows, skylights, rooflights and roof lanterns. Velux-compatible, triangular, arched, dormer and bay window solutions across Sussex, Kent, Surrey and London.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/css/global.css">
+  <style>
+    /* ── Page-specific overrides ── */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: var(--space-8);
+    }
+    .product-card {
+      background: var(--paper);
+      border: 1px solid var(--sage-200);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+    .product-card:hover {
+      box-shadow: 0 12px 40px rgba(26,29,26,0.10);
+      transform: translateY(-3px);
+    }
+    .product-card .img-placeholder {
+      height: 220px;
+      border-radius: 0;
+    }
+    .product-card-body {
+      padding: var(--space-6);
+    }
+    .product-card-body h3 {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      color: var(--sage-900);
+      margin-bottom: var(--space-2);
+    }
+    .product-card-body p {
+      font-size: 0.9375rem;
+      color: var(--sage-700);
+      line-height: 1.65;
+      margin-bottom: var(--space-4);
+    }
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+      margin-bottom: var(--space-4);
+    }
+    .tag {
+      font-family: var(--font-mono);
+      font-size: 0.6875rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 99px;
+      background: var(--sage-100);
+      color: var(--sage-700);
+    }
+    .challenge-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: var(--space-6);
+    }
+    .challenge-card {
+      padding: var(--space-6);
+      background: rgba(255,255,255,0.6);
+      border: 1px solid var(--sage-200);
+      border-radius: var(--radius-lg);
+    }
+    .challenge-card .icon {
+      font-size: 1.75rem;
+      margin-bottom: var(--space-3);
+    }
+    .challenge-card h3 {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      margin-bottom: var(--space-2);
+      color: var(--sage-900);
+    }
+    .challenge-card p {
+      font-size: 0.9rem;
+      color: var(--sage-700);
+      line-height: 1.6;
+    }
+    .spec-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+    .spec-table th {
+      background: var(--sage-900);
+      color: var(--paper);
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: var(--space-3) var(--space-4);
+      text-align: left;
+    }
+    .spec-table td {
+      padding: var(--space-3) var(--space-4);
+      border-bottom: 1px solid var(--sage-200);
+      color: var(--sage-700);
+      vertical-align: top;
+    }
+    .spec-table tr:last-child td {
+      border-bottom: none;
+    }
+    .spec-table tr:nth-child(even) td {
+      background: var(--sage-50, rgba(162,183,164,0.05));
+    }
+    .two-col-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-12);
+      align-items: center;
+    }
+    @media (max-width: 768px) {
+      .two-col-layout { grid-template-columns: 1fr; }
+    }
+    .tick-list {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+    }
+    .tick-list li {
+      display: flex;
+      gap: var(--space-3);
+      align-items: flex-start;
+      font-size: 0.9375rem;
+      color: var(--sage-700);
+      line-height: 1.55;
+    }
+    .tick-list li::before {
+      content: "✓";
+      color: var(--sage-400);
+      font-weight: 700;
+      font-size: 1rem;
+      margin-top: 1px;
+      flex-shrink: 0;
+    }
+    .process-steps {
+      counter-reset: step;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-6);
+    }
+    .process-step {
+      display: flex;
+      gap: var(--space-5);
+      align-items: flex-start;
+      counter-increment: step;
+    }
+    .step-num {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--sage-900);
+      color: var(--paper);
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .step-body h4 {
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      color: var(--sage-900);
+      margin-bottom: 4px;
+    }
+    .step-body p {
+      font-size: 0.9rem;
+      color: var(--sage-700);
+      line-height: 1.6;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAV ── -->
+  <header class="site-nav" id="site-nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">Creative Curtains &amp; Blinds</a>
+      <nav class="nav-links">
+        <a href="/curtains/">Curtains</a>
+        <a href="/blinds/" class="active">Blinds</a>
+        <a href="/shutters/">Shutters</a>
+        <a href="/solar-shading/">Solar Shading</a>
+        <a href="/sectors/">Sectors</a>
+        <a href="/projects/">Projects</a>
+        <a href="/about/">About</a>
+      </nav>
+      <a href="/contact/" class="btn btn-sm btn-primary nav-cta">Book Consultation</a>
+      <button class="nav-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ── HERO ── -->
+  <section class="page-hero">
+    <div class="img-placeholder" data-label="Shaped window — triangular or arched blind installed in a contemporary interior"></div>
+    <div class="page-hero-content">
+      <p class="overline">MADE TO MEASURE</p>
+      <h1>Shaped Windows<br>&amp; Skylights</h1>
+      <p class="hero-sub">When the window isn't a rectangle, the blind can't be either. We make and fit blinds for every awkward shape — from roof lanterns to triangular gable windows.</p>
+      <div class="hero-actions">
+        <a href="/contact/" class="btn btn-primary">Book a Consultation</a>
+        <a href="/projects/" class="btn btn-ghost-light">See Our Work</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── BREADCRUMB ── -->
+  <div class="breadcrumb-bar">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span>/</span>
+        <a href="/blinds/">Blinds</a>
+        <span>/</span>
+        <span>Shaped &amp; Skylights</span>
+      </nav>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- ── INTRO ── -->
+    <section class="section" data-reveal>
+      <div class="container">
+        <div class="two-col-layout">
+          <div>
+            <p class="overline">THE CHALLENGE</p>
+            <h2 class="section-title">Not every window is a rectangle.</h2>
+            <p>Contemporary architecture uses glazing to make a statement — soaring rooflights, dramatic gable triangles, arched Georgian windows, frameless flat-roof lanterns. All beautiful. All a problem when you need shade, privacy, or blackout.</p>
+            <p>Off-the-shelf blinds don't work. The gaps let light pour in, the fabric sags, the mechanism fights the angle. The only real solution is a blind made precisely for that opening, with a mechanism engineered for its orientation and a fabric suited to its solar exposure.</p>
+            <p>We've been fitting specialist shaped and roof blinds since 2002. We survey, template, specify and fit — all from our Hailsham base, across Sussex, Kent, Surrey and London.</p>
+          </div>
+          <div>
+            <div class="img-placeholder" data-label="Rooflight blind — flat glass Velux or Fakro equivalent with solar-reflective fabric"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── THE FOUR CHALLENGES ── -->
+    <section class="section bg-sage-light" data-reveal>
+      <div class="container">
+        <p class="overline text-center">WINDOW TYPES WE COVER</p>
+        <h2 class="section-title text-center">Every awkward opening.</h2>
+        <div class="challenge-grid" style="margin-top: var(--space-10);">
+          <div class="challenge-card" data-reveal>
+            <div class="icon">&#9670;</div>
+            <h3>Skylight &amp; Rooflight Blinds</h3>
+            <p>Horizontal or near-horizontal glazing — Velux, Fakro, Keylite and flat-roof rooflights. We fit blackout, dim-out and solar-reflective blinds with tensioned systems that stay in place at any angle. Motorisation is usually the right call on high skylights.</p>
+          </div>
+          <div class="challenge-card" data-reveal>
+            <div class="icon">&#9651;</div>
+            <h3>Triangular &amp; Trapezoid Windows</h3>
+            <p>Apex gable windows, sloped-sided trapezoids, and any window with a non-parallel top. We template each shape exactly and produce a blind that tracks the true geometry of the frame — no gaps, no bunching.</p>
+          </div>
+          <div class="challenge-card" data-reveal>
+            <div class="icon">&#9680;</div>
+            <h3>Arched &amp; Circular Windows</h3>
+            <p>Georgian arched heads, circular portholes, and semi-circular fanlights. Options include shaped fabric blinds that sit within the arch, or a flat blind with a shaped bottom rail that follows the curve. Each is made to template.</p>
+          </div>
+          <div class="challenge-card" data-reveal>
+            <div class="icon">&#9633;</div>
+            <h3>Roof Lanterns</h3>
+            <p>Contemporary glazed roof structures — typically a pyramid or ridge form over a kitchen extension. Pleated honeycomb fabric within each glazing bay. Manual or motorised. Dramatic light control without affecting the architectural form.</p>
+          </div>
+          <div class="challenge-card" data-reveal>
+            <div class="icon">&#9674;</div>
+            <h3>Dormer Windows</h3>
+            <p>Sloping-sided dormer reveals create reveals that standard blinds can't fill. We fit cassette rollers and Duette systems that sit flush within the dormer box — from the sloped ceiling to the vertical face — with no visible side gaps.</p>
+          </div>
+          <div class="challenge-card" data-reveal>
+            <div class="icon">&#10070;</div>
+            <h3>Bay Windows</h3>
+            <p>Three-section or five-section bays with angled returns. Each blind is hung to its own section with a consistent drop and aligned hem. Manual spring tension or motorised with a single scene control to raise and lower all sections together.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── PRODUCT OPTIONS ── -->
+    <section class="section" data-reveal>
+      <div class="container">
+        <p class="overline">BLIND TYPES FOR SPECIALIST WINDOWS</p>
+        <h2 class="section-title">Which system suits your window?</h2>
+        <p class="section-intro">Not every blind type works for every shape. Here's how the main systems apply to specialist glazing.</p>
+
+        <div class="product-grid" style="margin-top: var(--space-10);">
+
+          <div class="product-card" data-reveal>
+            <div class="img-placeholder" data-label="Duette / pleated honeycomb blind in a skylight or roof lantern bay"></div>
+            <div class="product-card-body">
+              <div class="tag-list"><span class="tag">Skylights</span><span class="tag">Roof Lanterns</span><span class="tag">Dormer</span></div>
+              <h3>Duette &amp; Pleated Honeycomb</h3>
+              <p>The most versatile system for non-standard glazing. Pleated fabric works in any orientation — including horizontal skylights where gravity works against conventional roller blinds. Fitted within individual glazing bays of roof lanterns, or spanning a full dormer in a single drop. Top-down/bottom-up operation available.</p>
+              <ul class="tick-list">
+                <li>Works horizontally — ideal for flat skylights</li>
+                <li>Thermal honeycomb cells reduce heat gain and loss</li>
+                <li>Motorisation standard on high or inaccessible glazing</li>
+                <li>Available in blackout, dim-out and solar</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="product-card" data-reveal>
+            <div class="img-placeholder" data-label="Roller blind cassette system in a dormer or sloped window opening"></div>
+            <div class="product-card-body">
+              <div class="tag-list"><span class="tag">Dormer</span><span class="tag">Bay Windows</span><span class="tag">Standard Skylights</span></div>
+              <h3>Cassette Roller Blinds</h3>
+              <p>For dormer windows and Velux-style rooflights with a near-vertical face, cassette roller blinds with side-channel tracking provide clean blackout performance. The cassette headbox and side channels create a sealed system that eliminates edge bleed entirely — critical for bedrooms in converted loft spaces.</p>
+              <ul class="tick-list">
+                <li>Side channels lock fabric flat against the glass</li>
+                <li>Full blackout achievable — EN 13120 Class 3</li>
+                <li>Spring or motorised operation</li>
+                <li>Cassette available in RAL colours to match frame</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="product-card" data-reveal>
+            <div class="img-placeholder" data-label="Shaped fabric blind in a triangular or arched architectural window"></div>
+            <div class="product-card-body">
+              <div class="tag-list"><span class="tag">Triangular</span><span class="tag">Arched</span><span class="tag">Trapezoid</span></div>
+              <h3>Fixed &amp; Semi-Fixed Shaped Panels</h3>
+              <p>For fixed or rarely-opened shaped windows — triangular gable lights, circular portholes, arched fanlights — a shaped fabric panel fitted into the frame gives continuous coverage without a mechanism. Made to a paper template taken on site, in any fabric. Provides privacy and reduces solar gain without the complexity of an operating blind.</p>
+              <ul class="tick-list">
+                <li>Templated exactly to your window opening</li>
+                <li>Any fabric — sheer, dim-out, blackout, patterned</li>
+                <li>Tensioned system holds fabric flat</li>
+                <li>Ideal where operation is rarely needed</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="product-card" data-reveal>
+            <div class="img-placeholder" data-label="Roman blind in a bay window — three sections with matching fabric and aligned hems"></div>
+            <div class="product-card-body">
+              <div class="tag-list"><span class="tag">Bay Windows</span><span class="tag">Arched Heads</span></div>
+              <h3>Roman Blinds</h3>
+              <p>Roman blinds work well in bay windows where you want a soft, fabric-led look rather than a roller mechanism. Each section of the bay has its own blind with a shared fabric. For arched windows, Roman blinds can be made with a curved bottom rail that follows the arch line when lowered, giving full coverage in the lowered position.</p>
+              <ul class="tick-list">
+                <li>Soft pleated folds suit period and contemporary interiors</li>
+                <li>Coordinated across all sections of a bay</li>
+                <li>Curved bottom rail option for arched openings</li>
+                <li>Battery or mains motorisation available</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── VELUX COMPATIBILITY TABLE ── -->
+    <section class="section bg-ink" data-reveal>
+      <div class="container">
+        <p class="overline" style="color: var(--sage-400);">SKYLIGHT COMPATIBILITY</p>
+        <h2 class="section-title" style="color: var(--paper);">Velux, Fakro &amp; flat rooflights.</h2>
+        <p style="color: rgba(250,248,243,0.7); max-width: 620px; margin-bottom: var(--space-8);">We work with all major skylight systems. Below is a guide to which blind types suit which skylight configurations.</p>
+        <div style="overflow-x: auto;">
+          <table class="spec-table">
+            <thead>
+              <tr>
+                <th>Skylight Type</th>
+                <th>Orientation</th>
+                <th>Blind System</th>
+                <th>Blackout Available</th>
+                <th>Motorisation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Velux centre-pivot / top-hung</td>
+                <td>Pitched (15–90°)</td>
+                <td>Duette or Pleated</td>
+                <td>&#10003; Yes</td>
+                <td>Velux INTEGRA or Somfy</td>
+              </tr>
+              <tr>
+                <td>Fakro / Keylite pitched</td>
+                <td>Pitched (15–75°)</td>
+                <td>Duette or Roller cassette</td>
+                <td>&#10003; Yes</td>
+                <td>Somfy compatible</td>
+              </tr>
+              <tr>
+                <td>Flat rooflight (frameless)</td>
+                <td>Horizontal / near-flat</td>
+                <td>Pleated — tensioned system</td>
+                <td>&#10003; Yes</td>
+                <td>Recommended (inaccessible)</td>
+              </tr>
+              <tr>
+                <td>Roof lantern (pyramid/ridge)</td>
+                <td>Sloped bays within frame</td>
+                <td>Pleated per bay</td>
+                <td>&#10003; Yes</td>
+                <td>Recommended</td>
+              </tr>
+              <tr>
+                <td>Walk-on glass rooflight</td>
+                <td>Horizontal (structural glass)</td>
+                <td>Tensioned pleated underside</td>
+                <td>&#10003; Yes</td>
+                <td>Required</td>
+              </tr>
+              <tr>
+                <td>Conservation-style roof window</td>
+                <td>Pitched</td>
+                <td>Roller or Roman</td>
+                <td>&#10003; Yes</td>
+                <td>Optional</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── WHY IT MATTERS / HEAT GAIN ── -->
+    <section class="section" data-reveal>
+      <div class="container">
+        <div class="two-col-layout">
+          <div>
+            <div class="img-placeholder" data-label="Infographic or close-up of solar fabric in rooflight — heat control visual"></div>
+          </div>
+          <div>
+            <p class="overline">SOLAR PERFORMANCE</p>
+            <h2 class="section-title">Overhead glass is a different problem.</h2>
+            <p>A vertical window receives maybe 30% of the potential solar radiation of an overhead rooflight at the same latitude. Skylights and rooflights — particularly those facing south or west — generate serious overheating in spring and summer. The sun is more directly overhead, the glass area appears larger from the inside, and radiant heat builds quickly in the space below.</p>
+            <p>For horizontal glazing, the right fabric specification matters as much as the blind system. We specify:</p>
+            <ul class="tick-list">
+              <li>High-reflectance solar fabrics — openness factor 1–5% for rooflights</li>
+              <li>Aluminised backing where maximum heat rejection is required</li>
+              <li>Duette honeycomb cells for combined thermal and acoustic benefit</li>
+              <li>g-value data available for TM59 thermal modelling (residential overheating assessments)</li>
+            </ul>
+            <a href="/knowledge/solar-heat-gain/" class="btn btn-secondary" style="margin-top: var(--space-5);">Solar Heat Gain Guide</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── OUR PROCESS ── -->
+    <section class="section bg-sage-light" data-reveal>
+      <div class="container">
+        <div style="max-width: 680px; margin: 0 auto;">
+          <p class="overline text-center">HOW WE WORK</p>
+          <h2 class="section-title text-center">Survey first. Always.</h2>
+          <p class="text-center" style="color: var(--sage-700); margin-bottom: var(--space-10);">Shaped windows and skylights cannot be ordered from dimensions alone. We always start with a site survey.</p>
+          <div class="process-steps">
+            <div class="process-step" data-reveal>
+              <div class="step-num">01</div>
+              <div class="step-body">
+                <h4>Site Survey</h4>
+                <p>We visit to assess the window orientation, frame type, access constraints, and any obstructions. For skylights, we note pitch angle, glazing bar positions, and any existing mechanism recesses. Templates are taken for shaped windows — not just measurements.</p>
+              </div>
+            </div>
+            <div class="process-step" data-reveal>
+              <div class="step-num">02</div>
+              <div class="step-body">
+                <h4>System Specification</h4>
+                <p>We recommend the blind system, fabric and control method based on the survey. We'll discuss the balance of light control, thermal performance, aesthetics and budget — and supply fabric swatches where relevant.</p>
+              </div>
+            </div>
+            <div class="process-step" data-reveal>
+              <div class="step-num">03</div>
+              <div class="step-body">
+                <h4>Manufacture</h4>
+                <p>All shaped and skylight blinds are made to measure by our manufacturing partners. Lead times are typically 3–5 weeks from order. Standard blind sizes are not applicable for shaped windows — every order is bespoke.</p>
+              </div>
+            </div>
+            <div class="process-step" data-reveal>
+              <div class="step-num">04</div>
+              <div class="step-body">
+                <h4>Professional Installation</h4>
+                <p>Our installation team fits the blinds, including any motorisation wiring, and adjusts the tracking system for a perfect fit. For rooflights and high skylights we bring the appropriate access equipment. We don't outsource installation.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SHAPED WINDOWS GALLERY STRIP ── -->
+    <section class="section" data-reveal>
+      <div class="container">
+        <p class="overline">FROM OUR WORK</p>
+        <h2 class="section-title">Shaped windows we've dressed.</h2>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-4); margin-top: var(--space-8);">
+          <div class="img-placeholder" style="height: 280px;" data-label="Shaped windows — triangular gable blind installation"></div>
+          <div class="img-placeholder" style="height: 280px;" data-label="Shaped windows — arched blind in period property"></div>
+          <div class="img-placeholder" style="height: 280px;" data-label="Shaped windows — flat rooflight with pleated blind"></div>
+          <div class="img-placeholder" style="height: 280px;" data-label="Shaped windows — roof lantern with motorised Duette per bay"></div>
+          <div class="img-placeholder" style="height: 280px;" data-label="Shaped windows — dormer cassette roller with side channels"></div>
+          <div class="img-placeholder" style="height: 280px;" data-label="Shaped windows — bay window Roman blinds with aligned hems"></div>
+        </div>
+        <p style="font-size:0.85rem; color: var(--sage-700); margin-top: var(--space-4);">Images of real installations coming soon.</p>
+      </div>
+    </section>
+
+    <!-- ── CTA ── -->
+    <section class="section-cta" data-reveal>
+      <div class="container">
+        <div class="cta-box">
+          <p class="overline">GET STARTED</p>
+          <h2>Tell us about your window.</h2>
+          <p>The best place to start is a phone call or an email. Describe the window, tell us roughly where you are, and we'll advise on whether a site visit is needed and what your options are likely to be.</p>
+          <div class="cta-actions">
+            <a href="/contact/" class="btn btn-primary">Book a Consultation</a>
+            <a href="tel:01323844555" class="btn btn-ghost">01323 844555</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <p class="footer-logo">Creative Curtains &amp; Blinds</p>
+        <p class="footer-tagline">Made to measure. Made to last.</p>
+        <p class="footer-address">9 North Street, Hailsham, BN27 1DQ<br>East Sussex</p>
+      </div>
+      <div class="footer-col">
+        <h4>Products</h4>
+        <ul>
+          <li><a href="/curtains/">Curtains</a></li>
+          <li><a href="/blinds/">Blinds</a></li>
+          <li><a href="/blinds/shaped-skylights/">Shaped &amp; Skylights</a></li>
+          <li><a href="/shutters/">Shutters</a></li>
+          <li><a href="/solar-shading/">Solar Shading</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Knowledge</h4>
+        <ul>
+          <li><a href="/knowledge/blackout-guide/">Blackout Guide</a></li>
+          <li><a href="/knowledge/solar-heat-gain/">Solar Heat Gain</a></li>
+          <li><a href="/knowledge/motorisation-guide/">Motorisation</a></li>
+          <li><a href="/knowledge/fabric-performance/">Fabric Performance</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/projects/">Projects</a></li>
+          <li><a href="/showroom/">Showroom</a></li>
+          <li><a href="/contact/">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-base">
+      <p>&copy; 2025 Creative Curtains and Blinds Ltd. 9 North Street, Hailsham, East Sussex BN27 1DQ.</p>
+      <div class="footer-legal">
+        <a href="/privacy/">Privacy Policy</a>
+        <a href="/accessibility/">Accessibility</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Nav scroll behaviour
+    const nav = document.getElementById('site-nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('is-scrolled', window.scrollY > 60);
+    });
+
+    // Scroll reveal
+    const reveals = document.querySelectorAll('[data-reveal]');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    reveals.forEach(el => io.observe(el));
+  </script>
+
+</body>
+</html>
