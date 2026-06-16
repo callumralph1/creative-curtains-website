@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inspiration Gallery | Creative Curtains &amp; Blinds</title>
+  <meta name="description" content="Browse our inspiration gallery — real installations of curtains, blinds, shutters and solar shading from homes and projects across Sussex, Surrey, Kent and London.">
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/css/global.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    .masonry {
+      columns: 3;
+      column-gap: var(--space-4);
+      margin-top: var(--space-10);
+    }
+    @media (max-width: 900px) { .masonry { columns: 2; } }
+    @media (max-width: 560px) { .masonry { columns: 1; } }
+    .masonry-item {
+      break-inside: avoid;
+      margin-bottom: var(--space-4);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+    }
+    .masonry-item .img-placeholder {
+      border-radius: 0;
+      transition: transform 0.4s ease;
+    }
+    .masonry-item:hover .img-placeholder { transform: scale(1.04); }
+    .masonry-item .item-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: var(--space-4);
+      background: linear-gradient(transparent, rgba(26,29,26,0.75));
+      color: var(--paper);
+      font-size: var(--text-sm);
+      opacity: 0;
+      transform: translateY(8px);
+      transition: opacity 0.3s, transform 0.3s;
+    }
+    .masonry-item:hover .item-caption { opacity: 1; transform: translateY(0); }
+
+    .filter-bar { display: flex; gap: var(--space-2); flex-wrap: wrap; margin-bottom: var(--space-6); }
+    .filter-btn { font-size: var(--text-sm); padding: var(--space-2) var(--space-5); border-radius: var(--radius-full); border: 1px solid var(--sage-200); background: transparent; color: var(--muted); cursor: pointer; transition: all 0.2s; }
+    .filter-btn:hover, .filter-btn.active { background: var(--sage-900); color: var(--paper); border-color: var(--sage-900); }
+    .masonry-item[data-hidden="true"] { display: none; }
+  </style>
+</head>
+<body>
+
+<nav class="site-nav" id="siteNav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">Creative Curtains &amp; Blinds</a>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/curtains/">Curtains</a></li>
+      <li><a href="/blinds/">Blinds</a></li>
+      <li><a href="/shutters/">Shutters</a></li>
+      <li><a href="/solar-shading/">Solar Shading</a></li>
+      <li><a href="/sectors/">Sectors</a></li>
+      <li><a href="/projects/">Projects</a></li>
+      <li><a href="/showroom/">Showroom</a></li>
+      <li><a href="/contact/" class="nav-cta">Get a Quote</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="page-hero" style="min-height:55vh;">
+  <div class="img-placeholder" style="position:absolute;inset:0;z-index:0;opacity:0.4;" data-label="Hero: Collage or detail of beautiful window treatment installation"></div>
+  <div class="page-hero-content">
+    <p class="eyebrow">Inspiration</p>
+    <h1>Real installations, real homes</h1>
+    <p class="lead">Browse photographs from our own projects — curtains, blinds, shutters, and shading solutions installed across Sussex, Surrey, Kent and London.</p>
+  </div>
+</section>
+
+<section class="section-pad">
+  <div class="container">
+
+    <!-- Intro -->
+    <div data-reveal style="max-width:600px;margin-bottom:var(--space-10);">
+      <p>All images are from actual installations by our own team. Nothing is staged or styled — what you see is what we make and fit. Images will be added as projects complete. If something catches your eye, <a href="/contact/" style="color:var(--sage-700);">ask us about it</a>.</p>
+    </div>
+
+    <!-- Filter -->
+    <div class="filter-bar" data-reveal>
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="curtains">Curtains</button>
+      <button class="filter-btn" data-filter="blinds">Blinds</button>
+      <button class="filter-btn" data-filter="shutters">Shutters</button>
+      <button class="filter-btn" data-filter="shading">External Shading</button>
+      <button class="filter-btn" data-filter="motorised">Motorised</button>
+    </div>
+
+    <!-- Masonry grid -->
+    <div class="masonry" id="masonryGrid">
+
+      <!-- Curtains -->
+      <div class="masonry-item" data-category="curtains">
+        <div class="img-placeholder" style="height:380px;" data-label="Curtains folder: elegant full-length curtains in sitting room"></div>
+        <div class="item-caption">Interlined curtains — sitting room</div>
+      </div>
+      <div class="masonry-item" data-category="curtains">
+        <div class="img-placeholder" style="height:260px;" data-label="Curtains folder: heading pleat detail — pencil or pinch"></div>
+        <div class="item-caption">Pinch pleat heading detail</div>
+      </div>
+      <div class="masonry-item" data-category="curtains">
+        <div class="img-placeholder" style="height:340px;" data-label="Curtains folder: curtains with pelmet or cornice in bedroom"></div>
+        <div class="item-caption">Curtains with hand-made pelmet</div>
+      </div>
+      <div class="masonry-item" data-category="curtains">
+        <div class="img-placeholder" style="height:300px;" data-label="Curtains folder: bay window curtains — triple track"></div>
+        <div class="item-caption">Bay window treatment</div>
+      </div>
+
+      <!-- Roller blinds -->
+      <div class="masonry-item" data-category="blinds">
+        <div class="img-placeholder" style="height:280px;" data-label="Roller blinds folder: roller blind in kitchen or dining area"></div>
+        <div class="item-caption">Roller blind — kitchen</div>
+      </div>
+      <div class="masonry-item" data-category="blinds">
+        <div class="img-placeholder" style="height:360px;" data-label="Roller blinds folder: dual roller day night blind in bedroom"></div>
+        <div class="item-caption">Day/night roller blind — bedroom</div>
+      </div>
+      <div class="masonry-item" data-category="blinds">
+        <div class="img-placeholder" style="height:250px;" data-label="Duette pleated hive folder: honeycomb blind in sash window"></div>
+        <div class="item-caption">Duette honeycomb blind</div>
+      </div>
+      <div class="masonry-item" data-category="blinds">
+        <div class="img-placeholder" style="height:310px;" data-label="Vertical blinds folder: vertical blinds on large sliding doors"></div>
+        <div class="item-caption">Vertical blinds — sliding doors</div>
+      </div>
+      <div class="masonry-item" data-category="blinds">
+        <div class="img-placeholder" style="height:290px;" data-label="Roman blinds folder: roman blind in linen or natural fabric"></div>
+        <div class="item-caption">Roman blind — linen fabric</div>
+      </div>
+      <div class="masonry-item" data-category="blinds">
+        <div class="img-placeholder" style="height:330px;" data-label="Silhouette blinds folder: silhouette blind diffusing light"></div>
+        <div class="item-caption">Silhouette blind — light diffusion</div>
+      </div>
+
+      <!-- Shutters -->
+      <div class="masonry-item" data-category="shutters">
+        <div class="img-placeholder" style="height:400px;" data-label="Shutters folder: full-height plantation shutters in lounge"></div>
+        <div class="item-caption">Full-height plantation shutters</div>
+      </div>
+      <div class="masonry-item" data-category="shutters">
+        <div class="img-placeholder" style="height:270px;" data-label="Shutters folder: tier-on-tier shutters in sash window"></div>
+        <div class="item-caption">Tier-on-tier shutters</div>
+      </div>
+      <div class="masonry-item" data-category="shutters">
+        <div class="img-placeholder" style="height:320px;" data-label="Shaped windows folder: arched or shaped shutter treatment"></div>
+        <div class="item-caption">Shaped window shutter</div>
+      </div>
+
+      <!-- External shading -->
+      <div class="masonry-item" data-category="shading">
+        <div class="img-placeholder" style="height:350px;" data-label="External Shading folder: external blind on glazed modern house"></div>
+        <div class="item-caption">External roller — new build</div>
+      </div>
+      <div class="masonry-item" data-category="shading">
+        <div class="img-placeholder" style="height:280px;" data-label="Blind Screen folder: blind screen or solar screen product detail"></div>
+        <div class="item-caption">Solar screen detail</div>
+      </div>
+
+      <!-- Motorised -->
+      <div class="masonry-item" data-category="motorised">
+        <div class="img-placeholder" style="height:300px;" data-label="Motorised products folder: motorised blind with remote or wall switch"></div>
+        <div class="item-caption">Motorised roller blind</div>
+      </div>
+      <div class="masonry-item" data-category="motorised">
+        <div class="img-placeholder" style="height:360px;" data-label="Motorised products folder: smart home integration — curtains on motorised track"></div>
+        <div class="item-caption">Motorised curtain track</div>
+      </div>
+
+      <!-- Work photos / general installations -->
+      <div class="masonry-item" data-category="curtains">
+        <div class="img-placeholder" style="height:280px;" data-label="Work phots folder: installation in progress — fitter at work"></div>
+        <div class="item-caption">Installation — in progress</div>
+      </div>
+      <div class="masonry-item" data-category="blinds">
+        <div class="img-placeholder" style="height:320px;" data-label="Images of work folder: completed installation — finished room shot"></div>
+        <div class="item-caption">Finished installation</div>
+      </div>
+
+    </div>
+
+    <!-- More coming notice -->
+    <div data-reveal style="text-align:center;margin-top:var(--space-16);padding:var(--space-10);background:var(--sage-50);border-radius:var(--radius-lg);">
+      <p class="eyebrow">Gallery growing</p>
+      <h3 style="font-size:var(--text-2xl);margin:var(--space-3) 0;">More photographs coming soon</h3>
+      <p style="color:var(--muted);max-width:480px;margin:0 auto;">We're adding real project photographs as they come in. Check back regularly, or follow us for updates.</p>
+      <a href="/contact/" class="btn btn-outline" style="margin-top:var(--space-6);">Ask us about a specific product</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-band">
+  <div class="container">
+    <div data-reveal style="text-align:center;">
+      <p class="eyebrow" style="color:var(--sage-400);">Seen something you like?</p>
+      <h2 style="color:var(--paper);">Come and see samples in person</h2>
+      <p style="color:rgba(250,248,243,0.7);max-width:540px;margin:var(--space-4) auto var(--space-8);">Our Hailsham showroom has the full range on display. Bring your dimensions, your fabric swatches, or just your ideas — we'll take it from there.</p>
+      <div style="display:flex;gap:var(--space-4);justify-content:center;flex-wrap:wrap;">
+        <a href="/showroom/" class="btn btn-primary">Visit the Showroom</a>
+        <a href="/contact/" class="btn btn-ghost-paper">Request a Home Survey</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">Creative Curtains &amp; Blinds</div>
+        <p>Bespoke window treatments, expertly made and installed across Sussex, Surrey, Kent and London since 2002.</p>
+        <address>9 North Street<br>Hailsham, BN27 1DQ<br>East Sussex</address>
+      </div>
+      <div class="footer-col"><h4>Products</h4><ul><li><a href="/curtains/">Curtains</a></li><li><a href="/blinds/">Blinds</a></li><li><a href="/shutters/">Shutters</a></li><li><a href="/solar-shading/">External Shading</a></li></ul></div>
+      <div class="footer-col"><h4>Sectors</h4><ul><li><a href="/sectors/residential/">Residential</a></li><li><a href="/sectors/hotels/">Hotels</a></li><li><a href="/sectors/healthcare/">Healthcare</a></li><li><a href="/sectors/schools/">Schools</a></li><li><a href="/sectors/offices/">Offices</a></li><li><a href="/sectors/developers/">Developers</a></li></ul></div>
+      <div class="footer-col"><h4>Company</h4><ul><li><a href="/about/">About Us</a></li><li><a href="/projects/">Projects</a></li><li><a href="/inspiration/">Inspiration</a></li><li><a href="/showroom/">Showroom</a></li><li><a href="/trade/">Trade Portal</a></li><li><a href="/contact/">Contact</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Creative Curtains and Blinds Ltd. All rights reserved.</p>
+      <nav class="footer-legal"><a href="/privacy/">Privacy Policy</a><a href="/accessibility/">Accessibility</a></nav>
+    </div>
+  </div>
+</footer>
+
+<script>
+const nav = document.getElementById('siteNav');
+window.addEventListener('scroll', () => { nav.classList.toggle('is-scrolled', window.scrollY > 60); }, { passive: true });
+document.getElementById('navHamburger').addEventListener('click', function() { document.getElementById('navLinks').classList.toggle('is-open'); this.classList.toggle('is-open'); });
+
+// Filter functionality
+const filterBtns = document.querySelectorAll('.filter-btn');
+const items = document.querySelectorAll('.masonry-item');
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filterBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const f = btn.dataset.filter;
+    items.forEach(item => {
+      item.dataset.hidden = (f !== 'all' && item.dataset.category !== f) ? 'true' : 'false';
+    });
+  });
+});
+
+// Scroll reveal
+const revealEls = document.querySelectorAll('[data-reveal]');
+const obs = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); obs.unobserve(e.target); } }); }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+revealEls.forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
